@@ -5,5 +5,6 @@ public class Main
         System.out.println("alex er sej");
 
         System.out.println("Snøffel");
+        System.out.println("hej");
     }
 }
