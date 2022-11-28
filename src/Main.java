@@ -1,4 +1,4 @@
-public class Main{
+public class Main{ // EJERSKAB: ALLE
 
     UserInterface ui = new UserInterface();
 
