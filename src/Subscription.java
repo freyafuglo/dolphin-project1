@@ -1,16 +1,16 @@
 public enum Subscription {
     JUNIOR(1000),
     SENIOR(1600),
-    PENSIONIST(SENIOR.getKontingent() * 0.75),
+    PENSIONIST(SENIOR.getSubscription() * 0.75),
     PASSIV(500);
 
-    public final double kontingent;
+    public final double subscription;
 
-    Subscription(double kontingent) {
-        this.kontingent = kontingent;
+    Subscription(double subscription) {
+        this.subscription = subscription;
     }
 
-    public double getKontingent(){
-        return kontingent;
+    public double getSubscription(){
+        return subscription;
     }
 }
