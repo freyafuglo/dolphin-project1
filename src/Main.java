@@ -17,6 +17,8 @@ public class Main
     void run(){
 
         menu.fullMenu();
+
+
     }
 
     public static void main(String[] args){
