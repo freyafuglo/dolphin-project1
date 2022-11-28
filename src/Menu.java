@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Menu {
+public class Menu { // EJERSKAB: DITTE & MATHIAS
 
     private String menuHeader;
     private String leadText;
