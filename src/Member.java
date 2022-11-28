@@ -7,18 +7,19 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private boolean isActive;
     private static int idCounter;
     private String ID = "0000";
+    private Subscription subscription;
     private ArrayList<Member> members = new ArrayList<>();
 
     UserInterface ui = new UserInterface();
 
-    public Member(String name, int age, String phoneNumber, boolean active)
+    public Member(String name, int age, String phoneNumber, boolean isActive)
     {
         setName(name);
         setAge(age);
         setPhoneNumber(phoneNumber);
-        isActive(active);
+        isActive(isActive);
         setID();
-
+        setSubscription();
     }
 
     public void isActive(boolean isActive) {
@@ -48,6 +49,31 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public void setSubscription() {
+        if (isActive)
+        {
+            if (age < 18)
+            {
+                this.subscription = Subscription.JUNIOR;
+            }
+            else if (age < 60)
+            {
+                this.subscription = Subscription.SENIOR;
+            }
+            else
+            {
+                this.subscription = Subscription.PENSIONIST;
+            }
+        }
+        else
+            this.subscription = Subscription.PASSIV;
+
+    }
+
+    public Subscription getSubscription() {
+        return subscription;
     }
 
     public int getAge() {
