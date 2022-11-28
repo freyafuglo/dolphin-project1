@@ -1,5 +1,4 @@
-public class Main
-{
+public class Main{
 
     UserInterface ui = new UserInterface();
 
