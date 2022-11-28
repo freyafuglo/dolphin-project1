@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Member {
+public abstract class Member { // EJERSKAB: FREYA & ALEXANDER
     private String name;
     private int age;
     private String phoneNumber;
