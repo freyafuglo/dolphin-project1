@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class MemberList
+public class MemberList // EJERSKAB: ALEXANDER & FREYA
 {
     private ArrayList<CompetitionSwimmer> competitionSwimmers = new ArrayList<>();
     private ArrayList<CompetitionSwimmer> crawlSwimmers = new ArrayList<>();
