@@ -84,15 +84,15 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
                 break;
             case 4:
-                ui.println("TOP 5");
+                ui.println("HOLDLISTE");
 
                 break;
             case 5:
-                ui.println("REGNSKAB");
+                ui.println("TOP FEM");
 
                 break;
             case 6:
-                ui.println("HOLDLISTE");
+                ui.println("REGNSKAB");
 
                 break;
 

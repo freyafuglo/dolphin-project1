@@ -6,9 +6,9 @@ public class Main{
             "1. Tilføj nyt medlem",
             "2. Rediger medlem",
             "3. Medlemsliste",
-            "4. Top 5",
-            "5. Regnskab",
-            "6. Holdliste",
+            "4. Holdliste",
+            "5. Top fem",
+            "6. Regnskab",
     });
 
     void run(){
