@@ -1,16 +1,17 @@
-public enum Subscription {
+public enum Subscription { // EJERSKAB: DITTE & MATHIAS
+
     JUNIOR(1000),
     SENIOR(1600),
-    PENSIONIST(SENIOR.getSubscription() * 0.75),
+    PENSIONIST(SENIOR.getSubscriptionPrice() * 0.75),
     PASSIV(500);
 
-    public final double subscription;
+    public final double subscriptionPrice;
 
-    Subscription(double subscription) {
-        this.subscription = subscription;
+    Subscription(double subscriptionPrice) {
+        this.subscriptionPrice = subscriptionPrice;
     }
 
-    public double getSubscription(){
-        return subscription;
+    public double getSubscriptionPrice(){
+        return subscriptionPrice;
     }
 }
