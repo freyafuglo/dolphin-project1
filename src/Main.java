@@ -7,19 +7,18 @@ public class Main{
             "2. Rediger medlem",
             "3. Medlemsliste",
             "4. Top 5",
-            "5. Rediger medlem",
-            "6. Regnskab",
-            "7. Holdliste",
-            "8. Fjern medlem",
+            "5. Regnskab",
+            "6. Holdliste",
     });
 
     void run(){
-
         menu.fullMenu();
+
     }
 
     public static void main(String[] args){
 
         new Main().run();
     }
+
 }

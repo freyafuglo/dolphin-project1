@@ -60,9 +60,9 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
         do {
             menuContent();
 
-            backToMenu = ui.readString("Tilbage til hovedmenu [y/n]?:");
+            backToMenu = ui.readString("Tilbage til hovedmenu [j/n]?:");
 
-        } while (backToMenu.equalsIgnoreCase("y"));
+        } while (backToMenu.equalsIgnoreCase("j"));
 
         ui.println("Hey heeey");
     }
@@ -88,21 +88,14 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
                 break;
             case 5:
-                ui.println("REDIGER MEDLEM");
-
-                break;
-            case 6:
                 ui.println("REGNSKAB");
 
                 break;
-            case 7:
+            case 6:
                 ui.println("HOLDLISTE");
 
                 break;
-            case 8:
-                ui.println("FJERN MEDLEM");
 
-                break;
             default:
                 break;
 
