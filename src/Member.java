@@ -12,12 +12,12 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
 
     UserInterface ui = new UserInterface();
 
-    public Member(String name, int age, String phoneNumber, boolean isActive)
+    public Member(String name, int age, String phoneNumber)
     {
         setName(name);
         setAge(age);
         setPhoneNumber(phoneNumber);
-        isActive(isActive);
+        isActive = true;
         setID();
         setSubscription();
     }
