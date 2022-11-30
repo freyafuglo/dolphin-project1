@@ -4,6 +4,10 @@ public class UserInterface { // EJERSKAB: ALLE
 
     Scanner in = new Scanner(System.in);
 
+    public void print(String msg){
+        System.out.print(msg);
+    }
+
     public void println(String msg){
         System.out.println(msg);
     }

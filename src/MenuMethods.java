@@ -35,10 +35,10 @@ public class MenuMethods {
 
             do {
                 switch (menuDiscipline.readChoice()) {
-                    case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning\n");
-                    case 2 -> swimDiscipline = swimDiscipline.concat("Rygsvømning\n");
-                    case 3 -> swimDiscipline = swimDiscipline.concat("Crawl\n");
-                    case 4 -> swimDiscipline = swimDiscipline.concat("Butterfly\n");
+                    case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning, ");
+                    case 2 -> swimDiscipline = swimDiscipline.concat("Rygsvømning, ");
+                    case 3 -> swimDiscipline = swimDiscipline.concat("Crawl, ");
+                    case 4 -> swimDiscipline = swimDiscipline.concat("Butterfly, ");
                     case 5 -> done = true;
                 }
             }
@@ -72,5 +72,14 @@ public class MenuMethods {
             memberList.getRecreationalSwimmers().add(m);
             System.out.println(memberList.getRecreationalSwimmers().get(0));
         }
+    }
+
+    public void teamTotals(){
+        ui.println("Antal konkurrencesvømmere:  " + memberList.getCompetitionSwimmers().size());
+        ui.println("Bryst: " + memberList.getBreastStrokers().size());
+        ui.println("Ryg: " + memberList.getBackStrokers().size());
+        ui.println("Crawl: " + memberList.getCrawlSwimmers().size());
+        ui.println("Butterfly: " + memberList.getButterFlyers().size());
+
     }
 }
