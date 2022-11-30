@@ -46,7 +46,7 @@ public class MenuMethods {
             do {
                 switch (menuDiscipline.readChoice()) {
                     case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning\n");
-                    case 2 -> swimDiscipline = swimDiscipline.concat("Rygvømning\n");
+                    case 2 -> swimDiscipline = swimDiscipline.concat("Rygsvømning\n");
                     case 3 -> swimDiscipline = swimDiscipline.concat("Crawl\n");
                     case 4 -> swimDiscipline = swimDiscipline.concat("Butterfly\n");
                     case 5 -> done = true;
