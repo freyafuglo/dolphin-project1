@@ -94,6 +94,16 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
             case 4:
                 ui.println("HOLDLISTE");
+                System.out.println("Antal konkurrencesvømmere: ");
+                System.out.println(menuMethods.getCompetitionSwimmers().size());
+                System.out.println("Bryst: ");
+                System.out.println(menuMethods.getBreastStrokers().size());
+                System.out.println("Ryg: ");
+                System.out.println(menuMethods.getBackStrokers().size());
+                System.out.println("Crawl: ");
+                System.out.println(menuMethods.getCrawlSwimmers().size());
+                System.out.println("Butterfly: ");
+                System.out.println(menuMethods.getButterFlyers().size());
                 break;
 
             case 5:

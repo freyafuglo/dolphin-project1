@@ -12,6 +12,7 @@ public class Main{
     });
 
     void run(){
+
         menu.fullMenu();
 
     }

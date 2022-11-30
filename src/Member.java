@@ -8,7 +8,7 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private static int idCounter;
     private String ID = "0000";
     private Subscription subscription;
-    private ArrayList<Member> members = new ArrayList<>();
+
 
     UserInterface ui = new UserInterface();
 
@@ -28,10 +28,6 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public void setMembers(ArrayList<Member> members) {
-        this.members = members;
     }
 
     public void setID() {
