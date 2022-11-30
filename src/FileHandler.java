@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class FileHandler { // EJERSKAB: MATHIAS
+public class FileHandler { // EJERSKAB: MATHIAS & DITTE
 
     // KLASSE KALD
     UserInterface ui = new UserInterface();
@@ -111,7 +111,7 @@ public class FileHandler { // EJERSKAB: MATHIAS
             int id = Integer.parseInt(tokenScanner.next());
             String name = tokenScanner.next();
             int age = Integer.parseInt(tokenScanner.next());
-            int phoneNumber = Integer.parseInt(tokenScanner.next());
+            String phoneNumber = tokenScanner.next();
             String swimDiscipline = tokenScanner.next();
             Subscription subscription = Subscription.valueOf(tokenScanner.next());
 
