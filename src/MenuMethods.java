@@ -15,12 +15,11 @@ public class MenuMethods {
     }
 
     public void swimDiscipline() {
-
         boolean done = false;
 
         if (teamOrNot.equals("ja")) {
             String swimDiscipline = "";
-            Menu menu = new Menu("SVØMMEDISCIPLINER", "Vælg svømmediscipliner",
+            Menu menuDescipline = new Menu("SVØMMEDISCIPLINER", "Vælg svømmediscipliner",
                     new String[]{
                             "1. Brystsvømning",
                             "2. Rygsvømning",
@@ -28,10 +27,10 @@ public class MenuMethods {
                             "4. Butterfly",
                             "5. Ikke flere"
                     });
-            menu.printMenu();
+            menuDescipline.printMenu();
 
             do {
-                switch (menu.readChoice()) {
+                switch (menuDescipline.readChoice()) {
                     case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning\n");
                     case 2 -> swimDiscipline = swimDiscipline.concat("Rygvømning\n");
                     case 3 -> swimDiscipline = swimDiscipline.concat("Crawl\n");
