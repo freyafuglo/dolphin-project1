@@ -8,6 +8,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     boolean validInput = true;
     UserInterface ui = new UserInterface();
     MenuMethods menuMethods = new MenuMethods();
+    FileHandler fileHandler = new FileHandler();
 
     public Menu() {
 
@@ -77,6 +78,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                 ui.println("TILFØJ NYT MEDLEM");
                 menuMethods.addMember();
                 menuMethods.swimDiscipline();
+                fileHandler.saveFileCompetitionSwimmers();
                 break;
 
             case 2:
