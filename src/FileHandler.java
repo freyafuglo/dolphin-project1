@@ -27,7 +27,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getAge() + ";");
                 p.print(c.getPhoneNumber() + ";");
                 p.print(c.getSwimDiscipline() + ";");
-                p.print(c.getSubscription());
+                p.println(c.getSubscription());
             }
         p.close();
         } catch (IOException e){
@@ -92,7 +92,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber() + ";");
             }
             p.close();
         } catch (IOException e){
