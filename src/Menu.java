@@ -99,7 +99,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
             case 4:
                 ui.println("HOLDLISTE");
-                ui.println("Antal konkurrencesvømmere:  \n" + memberList.getCompetitionSwimmers().size());
+                ui.println("Antal konkurrencesvømmere:  " + memberList.getCompetitionSwimmers().size());
                 ui.println("Bryst: " + memberList.getBreastStrokers().size());
                 ui.println("Ryg: " + memberList.getBackStrokers().size());
                 ui.println("Crawl: " + memberList.getCrawlSwimmers().size());
