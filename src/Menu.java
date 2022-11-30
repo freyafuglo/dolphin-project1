@@ -9,6 +9,8 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     UserInterface ui = new UserInterface();
     MenuMethods menuMethods = new MenuMethods();
     FileHandler fileHandler = new FileHandler();
+    MemberList memberList = new MemberList();
+
 
     public Menu() {
 
@@ -78,7 +80,6 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                 ui.println("TILFØJ NYT MEDLEM");
                 menuMethods.addMember();
                 menuMethods.swimDiscipline();
-                fileHandler.saveFileCompetitionSwimmers();
                 break;
 
             case 2:
@@ -92,20 +93,17 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
             case 3:
                 ui.println("MEDLEMSLISTE");
+                fileHandler.loadFileCompetitionSwimmers();
+                ui.println(memberList.getCompetitionSwimmers().toString());
                 break;
 
             case 4:
                 ui.println("HOLDLISTE");
-                System.out.println("Antal konkurrencesvømmere: ");
-                System.out.println(menuMethods.getCompetitionSwimmers().size());
-                System.out.println("Bryst: ");
-                System.out.println(menuMethods.getBreastStrokers().size());
-                System.out.println("Ryg: ");
-                System.out.println(menuMethods.getBackStrokers().size());
-                System.out.println("Crawl: ");
-                System.out.println(menuMethods.getCrawlSwimmers().size());
-                System.out.println("Butterfly: ");
-                System.out.println(menuMethods.getButterFlyers().size());
+                ui.println("Antal konkurrencesvømmere:  \n" + memberList.getCompetitionSwimmers().size());
+                ui.println("Bryst: " + memberList.getBreastStrokers().size());
+                ui.println("Ryg: " + memberList.getBackStrokers().size());
+                ui.println("Crawl: " + memberList.getCrawlSwimmers().size());
+                ui.println("Butterfly: " + memberList.getButterFlyers().size());
                 break;
 
             case 5:

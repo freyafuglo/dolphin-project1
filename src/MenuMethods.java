@@ -1,28 +1,18 @@
 import java.util.ArrayList;
 
 public class MenuMethods {
-    String teamOrNot;
-    String name;
-    String phoneNumber;
-    int age;
+    private String teamOrNot;
+    private String name;
+    private String phoneNumber;
+    private int age;
     UserInterface ui = new UserInterface();
-
-
-
-    //Konkurrence svømmere
-    private ArrayList<CompetitionSwimmer> competitionSwimmers = new ArrayList<>();
-    private ArrayList<CompetitionSwimmer> crawlSwimmers = new ArrayList<>();
-    private ArrayList<CompetitionSwimmer> butterFlyers = new ArrayList<>();
-    private ArrayList<CompetitionSwimmer> breastStrokers = new ArrayList<>();
-    private ArrayList<CompetitionSwimmer> backStrokers = new ArrayList<>();
-
-    //Motionssvømmere
-    private ArrayList<RecreationalSwimmer> recreationalSwimmers = new ArrayList<>();
+    MemberList memberList = new MemberList();
+    FileHandler fileHandler = new FileHandler();
 
     public void addMember() {
         name = ui.readString("Indtast navn: ");
         age = ui.readInt("Indtast alder: ");
-        ui.in.nextLine();
+        ui.in.nextLine(); // SCANNERBUG
         phoneNumber = ui.readString("Indtast telefonnummer: ");
         teamOrNot = ui.readString("Skal medlemmet træne på hold? ");
     }
@@ -56,19 +46,20 @@ public class MenuMethods {
             while (!done);
 
             CompetitionSwimmer c = new CompetitionSwimmer(name, age, phoneNumber, swimDiscipline);
-            competitionSwimmers.add(c);
+            memberList.getCompetitionSwimmers().add(c);
+            fileHandler.saveFileCompetitionSwimmers();
 
             if (swimDiscipline.contains("Brystsvømning")){
-                breastStrokers.add(c);
+                memberList.getBreastStrokers().add(c);
             }
             if (swimDiscipline.contains("Rygsvømning")){
-                backStrokers.add(c);
+                memberList.getBackStrokers().add(c);
             }
             if (swimDiscipline.contains("Crawl")){
-                crawlSwimmers.add(c);
+                memberList.getCrawlSwimmers().add(c);
             }
             if (swimDiscipline.contains("Butterfly")){
-                butterFlyers.add(c);
+                memberList.getButterFlyers().add(c);
             }
             ui.println(c.getName() + "\n" + c.getAge() + "\n" +
                     c.getPhoneNumber() + "\n" + c.getSubscription() + "\n" + c.getID() + "\n" +
@@ -78,38 +69,8 @@ public class MenuMethods {
             ui.println(m.getName() + "\n" + m.getAge() + "\n" +
                     m.getPhoneNumber() + "\n" + m.getSubscription() + "\n" + m.getID());
 
-            recreationalSwimmers.add(m);
-            System.out.println(getRecreationalList().get(0));
+            memberList.getRecreationalSwimmers().add(m);
+            System.out.println(memberList.getRecreationalSwimmers().get(0));
         }
     }
-    public ArrayList getRecreationalList(){
-        return recreationalSwimmers;
-    }
-
-    public ArrayList<CompetitionSwimmer> getCompetitionSwimmers() {
-        return competitionSwimmers;
-    }
-
-    public ArrayList<CompetitionSwimmer> getBackStrokers() {
-        return backStrokers;
-    }
-
-    public ArrayList<CompetitionSwimmer> getBreastStrokers() {
-        return breastStrokers;
-    }
-
-    public ArrayList<CompetitionSwimmer> getButterFlyers() {
-        return butterFlyers;
-    }
-
-    public ArrayList<RecreationalSwimmer> getRecreationalSwimmers() {
-        return recreationalSwimmers;
-    }
-
-    public ArrayList<CompetitionSwimmer> getCrawlSwimmers() {
-        return crawlSwimmers;
-    }
-
-
-
 }

@@ -8,21 +8,30 @@ public class MemberList { // EJERSKAB: ALEXANDER & FREYA & MATHIAS
     private ArrayList<CompetitionSwimmer> butterFlyers = new ArrayList<>();
     private ArrayList<CompetitionSwimmer> breastStrokers = new ArrayList<>();
     private ArrayList<CompetitionSwimmer> backStrokers = new ArrayList<>();
+    // Motionssvømmere
+    private ArrayList<RecreationalSwimmer> recreationalSwimmers = new ArrayList<>();
 
     // GETTERE
-    public ArrayList<CompetitionSwimmer> getCompetitionSwimmers(){
+    public ArrayList<CompetitionSwimmer> getCompetitionSwimmers() {
         return competitionSwimmers;
     }
-    public ArrayList<CompetitionSwimmer> getCrawlSwimmers(){
+
+    public ArrayList<CompetitionSwimmer> getCrawlSwimmers() {
         return crawlSwimmers;
     }
-    public ArrayList<CompetitionSwimmer> getButterFlyers(){
+
+    public ArrayList<CompetitionSwimmer> getButterFlyers() {
         return butterFlyers;
     }
-    public ArrayList<CompetitionSwimmer> getBreastStrokers(){
+
+    public ArrayList<CompetitionSwimmer> getBreastStrokers() {
         return breastStrokers;
     }
-    public ArrayList<CompetitionSwimmer> getBackStrokers(){
+
+    public ArrayList<CompetitionSwimmer> getBackStrokers() {
         return backStrokers;
+    }
+    public ArrayList<RecreationalSwimmer> getRecreationalSwimmers() {
+        return recreationalSwimmers;
     }
 }
