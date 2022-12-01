@@ -1,19 +1,16 @@
 import java.util.ArrayList;
 
-public class MenuMethods {
+public class MenuMethods extends Member {
     private String teamOrNot;
-    private String name;
-    private String phoneNumber;
-    private int age;
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
     FileHandler fileHandler = new FileHandler();
 
     public void addMember() {
-        name = ui.readString("Indtast navn: ");
-        age = ui.readInt("Indtast alder: ");
+        setName(ui.readString("Indtast navn: "));
+        setAge(ui.readInt("Indtast alder: "));
         ui.in.nextLine(); // SCANNERBUG
-        phoneNumber = ui.readString("Indtast telefonnummer: ");
+        setPhoneNumber(ui.readString("Indtast telefonnummer: "));
         teamOrNot = ui.readString("Skal medlemmet træne på hold? ");
     }
 
@@ -45,9 +42,10 @@ public class MenuMethods {
 
             while (!done);
 
-            CompetitionSwimmer c = new CompetitionSwimmer(name, age, phoneNumber, swimDiscipline);
+            CompetitionSwimmer c = new CompetitionSwimmer(getName(), getAge(), getPhoneNumber(), swimDiscipline);
             memberList.getCompetitionSwimmers().add(c);
             fileHandler.saveFileCompetitionSwimmers();
+
 
             if (swimDiscipline.contains("Brystsvømning")){
                 memberList.getBreastStrokers().add(c);
@@ -65,7 +63,7 @@ public class MenuMethods {
                     c.getPhoneNumber() + "\n" + c.getSubscription() + "\n" + c.getID() + "\n" +
                     c.getSwimDiscipline());
         } else {
-            RecreationalSwimmer m = new RecreationalSwimmer(name, age, phoneNumber);
+            RecreationalSwimmer m = new RecreationalSwimmer(getName(), getAge(), getPhoneNumber());
             ui.println(m.getName() + "\n" + m.getAge() + "\n" +
                     m.getPhoneNumber() + "\n" + m.getSubscription() + "\n" + m.getID());
 

@@ -12,6 +12,10 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
 
     UserInterface ui = new UserInterface();
 
+    public Member(){
+
+    }
+
     public Member(String name, int age, String phoneNumber)
     {
         setName(name);
@@ -26,6 +30,7 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         this.isActive = isActive;
     }
 
+    // SETTERE
     public void setAge(int age) {
         this.age = age;
     }
@@ -68,6 +73,7 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
 
     }
 
+    // GETTERE
     public Subscription getSubscription() {
         return subscription;
     }
