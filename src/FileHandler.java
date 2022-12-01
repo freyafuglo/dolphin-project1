@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -20,7 +21,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
     public void saveFileCompetitionSwimmers(){
 
         try{
-            PrintStream p = new PrintStream(fileCompetitionSwimmers);
+            PrintStream p = new PrintStream(new FileOutputStream(fileCompetitionSwimmers));
             for (CompetitionSwimmer c: memberList.getCompetitionSwimmers()){
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
