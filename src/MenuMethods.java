@@ -6,6 +6,8 @@ public class MenuMethods extends Member {
     MemberList memberList = new MemberList();
     FileHandler fileHandler = new FileHandler();
 
+
+
     public void addMember() {
         setName(ui.readString("Indtast navn: "));
         setAge(ui.readInt("Indtast alder: "));
@@ -44,19 +46,19 @@ public class MenuMethods extends Member {
 
             CompetitionSwimmer c = new CompetitionSwimmer(getName(), getAge(), getPhoneNumber(), swimDiscipline);
             memberList.getCompetitionSwimmers().add(c);
-            fileHandler.saveFileCompetitionSwimmers();
 
 
-            if (swimDiscipline.contains("Brystsvømning")){
+
+            if (swimDiscipline.contains("Brystsvømning")) {
                 memberList.getBreastStrokers().add(c);
             }
-            if (swimDiscipline.contains("Rygsvømning")){
+            if (swimDiscipline.contains("Rygsvømning")) {
                 memberList.getBackStrokers().add(c);
             }
-            if (swimDiscipline.contains("Crawl")){
+            if (swimDiscipline.contains("Crawl")) {
                 memberList.getCrawlSwimmers().add(c);
             }
-            if (swimDiscipline.contains("Butterfly")){
+            if (swimDiscipline.contains("Butterfly")) {
                 memberList.getButterFlyers().add(c);
             }
             ui.println(c.getName() + "\n" + c.getAge() + "\n" +
@@ -72,7 +74,7 @@ public class MenuMethods extends Member {
         }
     }
 
-    public void teamTotals(){
+    public void teamTotals() {
         ui.println("Antal konkurrencesvømmere:  " + memberList.getCompetitionSwimmers().size());
         ui.println("Bryst: " + memberList.getBreastStrokers().size());
         ui.println("Ryg: " + memberList.getBackStrokers().size());
@@ -80,4 +82,6 @@ public class MenuMethods extends Member {
         ui.println("Butterfly: " + memberList.getButterFlyers().size());
 
     }
+
+
 }

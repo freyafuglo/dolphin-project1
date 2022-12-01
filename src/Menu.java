@@ -10,6 +10,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     MenuMethods menuMethods = new MenuMethods();
     FileHandler fileHandler = new FileHandler();
     MemberList memberList = new MemberList();
+    TrainingResult trainingResult = new TrainingResult();
 
     public Menu() {
 
@@ -86,6 +87,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
                 case 5:
                     ui.println("TOP FEM");
+
                     break;
 
                 case 6:
@@ -93,6 +95,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     break;
                 case 7:
                     ui.println("ANGIV TRÆNINGSRESULTAT");
+                    trainingResult.enterTrainingResult();
                     break;
                 case 9:
                     ui.println("Farvel og tak!");

@@ -1,43 +1,81 @@
 import java.util.ArrayList;
 
 public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
-private String swimDiscipline;
+    private String swimDiscipline;
 
-private double trainingResult = 00.00;
+    private double backTrainingResult;
+    private double breastTrainingResult;
+    private double crawlTrainingResult;
+    private double butterflyTrainingResult;
 
-    public CompetitionSwimmer(){
+    public CompetitionSwimmer() {
 
     }
 
-    public CompetitionSwimmer(String name, int age, String phoneNumber, String swimDiscipline)
-    {
+    public CompetitionSwimmer(String name, int age, String phoneNumber, String swimDiscipline) {
         super(name, age, phoneNumber);
         setSwimDiscipline(swimDiscipline);
     }
 
-    public CompetitionSwimmer(int id, String name, int age, String phoneNumber, String swimDiscipline, Subscription subscription, double trainingResult) {
+    public CompetitionSwimmer(String id, String name, int age, String phoneNumber, String swimDiscipline, Subscription subscription,
+                              double breastTrainingResult, double backTrainingResult,
+                              double crawlTrainingResult, double butterflyTrainingResult) {
+
         super(name, age, phoneNumber);
-        setTrainingResult(trainingResult);
+        setBreastTrainingResult(breastTrainingResult);
+        setBackTrainingResult(backTrainingResult);
+        setCrawlTrainingResult(crawlTrainingResult);
+        setButterflyTrainingResult(butterflyTrainingResult);
+
     }
 
 
     // GETTERE
-    public String getSwimDiscipline()
-    {
+    public String getSwimDiscipline() {
         return swimDiscipline;
     }
 
-    public double getTrainingResult() {
-        return trainingResult;
-    }
+
 
     // SETTERE
-    public void setSwimDiscipline(String swimDiscipline)
-    {
+    public void setSwimDiscipline(String swimDiscipline) {
         this.swimDiscipline = swimDiscipline;
     }
 
-    public void setTrainingResult(double trainingResult) {
-        this.trainingResult = trainingResult;
+
+
+
+
+    public double getBackTrainingResult() {
+        return backTrainingResult;
+    }
+
+    public void setBackTrainingResult(double backTrainingResult) {
+        this.backTrainingResult = backTrainingResult;
+    }
+
+    public double getBreastTrainingResult() {
+        return breastTrainingResult;
+    }
+
+    public void setBreastTrainingResult(double breastTrainingResult) {
+        this.breastTrainingResult = breastTrainingResult;
+    }
+
+    public double getCrawlTrainingResult() {
+        return crawlTrainingResult;
+    }
+
+    public void setCrawlTrainingResult(double crawlTrainingResult) {
+        this.crawlTrainingResult = crawlTrainingResult;
+    }
+
+    public double getButterflyTrainingResult() {
+        return butterflyTrainingResult;
+    }
+
+    public void setButterflyTrainingResult(double butterflyTrainingResult) {
+        this.butterflyTrainingResult = butterflyTrainingResult;
     }
 }
+

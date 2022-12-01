@@ -18,6 +18,7 @@ public class Main{
 
         fileHandler.loadFileCompetitionSwimmers();
         menu.menuFull();
+        fileHandler.saveFileCompetitionSwimmers();
 
     }
 

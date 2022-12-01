@@ -28,7 +28,11 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getAge() + ";");
                 p.print(c.getPhoneNumber() + ";");
                 p.print(c.getSwimDiscipline() + ";");
-                p.println(c.getSubscription());
+                p.print(c.getSubscription()+";");
+                p.print(c.getBreastTrainingResult()+";");
+                p.print(c.getBackTrainingResult()+";");
+                p.print(c.getCrawlTrainingResult()+";");
+                p.println(c.getButterflyTrainingResult());
             }
         p.close();
         } catch (IOException e){
@@ -108,15 +112,20 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
         while(fileScanner.hasNext()){
             Scanner tokenScanner = new Scanner(fileScanner.nextLine()).useDelimiter(";");
 
-            int id = Integer.parseInt(tokenScanner.next());
+            String id = tokenScanner.next();
             String name = tokenScanner.next();
             int age = Integer.parseInt(tokenScanner.next());
             String phoneNumber = tokenScanner.next();
             String swimDiscipline = tokenScanner.next();
             Subscription subscription = Subscription.valueOf(tokenScanner.next());
-            double trainingResult = Double.parseDouble(tokenScanner.next());
+            double breast = Double.parseDouble(tokenScanner.next());
+            double back = Double.parseDouble(tokenScanner.next());
+            double crawl = Double.parseDouble(tokenScanner.next());
+            double butter = Double.parseDouble(tokenScanner.next());
 
-            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber, swimDiscipline, subscription, trainingResult);
+
+
+            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber, swimDiscipline, subscription,breast, back, crawl, butter );
             memberList.getCompetitionSwimmers().add(c);
 
             if (swimDiscipline.contains("Brystsvømning")){

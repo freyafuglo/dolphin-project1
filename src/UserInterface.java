@@ -26,11 +26,20 @@ public class UserInterface { // EJERSKAB: MATHIAS & CO
     }
 
     public int readInt(){
+
         return in.nextInt();
     }
 
     public int readInt(String msg){
         println(msg);
         return readInt();
+    }
+
+    public double readDouble() {
+        return in.nextDouble();
+    }
+    public double readDouble(String msg){
+        println(msg);
+       return readDouble();
     }
 }
