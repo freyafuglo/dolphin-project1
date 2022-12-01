@@ -52,18 +52,19 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     }
 
     public void setSubscription() {
-        if (isActive)
-        {
-            if (age < 18)
-            {
+
+        if (isActive) {
+
+            if (age < 18) {
+
                 this.subscription = Subscription.JUNIOR;
             }
-            else if (age < 60)
-            {
+            else if (age < 60) {
+
                 this.subscription = Subscription.SENIOR;
             }
-            else
-            {
+            else {
+
                 this.subscription = Subscription.PENSIONIST;
             }
         }
