@@ -114,8 +114,9 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             String phoneNumber = tokenScanner.next();
             String swimDiscipline = tokenScanner.next();
             Subscription subscription = Subscription.valueOf(tokenScanner.next());
+            double trainingResult = Double.parseDouble(tokenScanner.next());
 
-            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber, swimDiscipline, subscription);
+            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber, swimDiscipline, subscription, trainingResult);
             memberList.getCompetitionSwimmers().add(c);
 
             if (swimDiscipline.contains("Brystsvømning")){
