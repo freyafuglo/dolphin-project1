@@ -43,13 +43,12 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
             ui.println("I/O exception: " + e.getMessage());
         }
-
     }
 
     public void saveFileButterFlyers(){
@@ -60,7 +59,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
@@ -76,7 +75,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
@@ -92,7 +91,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.println(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
