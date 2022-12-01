@@ -9,7 +9,7 @@ public class MenuMethods extends Member {
     public void addMember() {
         setName(ui.readString("Indtast navn: "));
         setAge(ui.readInt("Indtast alder: "));
-        ui.in.nextLine(); // SCANNERBUG
+        ui.scannerBug();
         setPhoneNumber(ui.readString("Indtast telefonnummer: "));
         teamOrNot = ui.readString("Skal medlemmet træne på hold? ");
     }

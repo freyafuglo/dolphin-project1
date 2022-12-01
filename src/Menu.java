@@ -11,7 +11,6 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     FileHandler fileHandler = new FileHandler();
     MemberList memberList = new MemberList();
 
-
     public Menu() {
 
     }

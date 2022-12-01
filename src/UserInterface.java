@@ -16,6 +16,10 @@ public class UserInterface { // EJERSKAB: MATHIAS & CO
         return in.nextLine();
     }
 
+    public String scannerBug(){
+        return in.nextLine();
+    }
+
     public String readString(String msg){
         println(msg);
         return readString();
