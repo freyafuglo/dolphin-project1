@@ -1,3 +1,5 @@
 0001;alex;32;8765432;null;SENIOR
 0002;joe;56;654321;null;SENIOR
-0003;tommy;54;654321;Rygsvømning, Crawl, ;SENIOR
+0003;tommy;54;654321;null;SENIOR
+0004;matty;7;6666666;null;JUNIOR
+0005;rick;45;8765678765;Rygsvømning, Crawl, ;SENIOR

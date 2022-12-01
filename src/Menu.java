@@ -38,7 +38,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
             try {
                 menuChoice = Integer.parseInt(ui.readString());
 
-                if (menuChoice > 0 && menuChoice <= menuItems.length) {
+                if (menuChoice > 0 && menuChoice <= menuItems.length || menuChoice == 9) {
                     validInput = true;
 
                 } else {
@@ -56,25 +56,17 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
     public void menuContent() {
 
-        printMenu();
+
         switchFunction();
     }
 
-    public void fullMenu() {
-        String backToMenu;
 
-        do {
-            menuContent();
-
-            backToMenu = ui.readString("Tilbage til hovedmenu [j/n]?:");
-
-        } while (backToMenu.equalsIgnoreCase("j"));
-
-        ui.println("Hey heeey");
-    }
 
     public void switchFunction() {
+        boolean done = false;
 
+do {
+    printMenu();
         switch (readChoice()) {
             case 1:
                 ui.println("TILFØJ NYT MEDLEM");
@@ -108,10 +100,14 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
             case 6:
                 ui.println("REGNSKAB");
                 break;
+            case 9:
+                ui.println("Farvel og tak!");
+                done = true;
+                break;
 
             default:
                 break;
 
-        }
+        }} while (!done);
     }
 }
