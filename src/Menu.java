@@ -65,7 +65,6 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     menuMethods.addMember();
                     menuMethods.swimDiscipline();
                     break;
-
                 case 2:
                     ui.println("REDIGER MEDLEM");
                     //Bestem om aktiv eller passiv
@@ -74,22 +73,17 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     if (aktivEllerPassiv.equals("ja")) {
                     }
                     break;
-
                 case 3:
                     ui.println("MEDLEMSLISTE");
                     ui.println(memberList.getCompetitionSwimmers().toString());
                     break;
-
                 case 4:
                     ui.println("HOLDLISTE");
                     menuMethods.teamTotals();
                     break;
-
                 case 5:
                     ui.println("TOP FEM");
-
                     break;
-
                 case 6:
                     ui.println("REGNSKAB");
                     break;
@@ -101,10 +95,8 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     ui.println("Farvel og tak!");
                     done = true;
                     break;
-
                 default:
                     break;
-
             }
         } while (!done);
     }

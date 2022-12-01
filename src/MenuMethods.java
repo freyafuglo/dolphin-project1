@@ -19,7 +19,7 @@ public class MenuMethods extends Member {
     public void swimDiscipline() {
         boolean done = false;
 
-        if (teamOrNot.equals("ja")) {
+        if (teamOrNot.equalsIgnoreCase("ja")) {
 
             String swimDiscipline = "";
             Menu menuDiscipline = new Menu("SVØMMEDISCIPLINER", "Vælg svømmediscipliner",
@@ -34,19 +34,17 @@ public class MenuMethods extends Member {
 
             do {
                 switch (menuDiscipline.readChoice()) {
-                    case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning, ");
-                    case 2 -> swimDiscipline = swimDiscipline.concat("Rygsvømning, ");
-                    case 3 -> swimDiscipline = swimDiscipline.concat("Crawl, ");
-                    case 4 -> swimDiscipline = swimDiscipline.concat("Butterfly, ");
+                    case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning-");
+                    case 2 -> swimDiscipline = swimDiscipline.concat("Rygsvømning-");
+                    case 3 -> swimDiscipline = swimDiscipline.concat("Crawl-");
+                    case 4 -> swimDiscipline = swimDiscipline.concat("Butterfly-");
                     case 5 -> done = true;
                 }
             }
-
             while (!done);
 
             CompetitionSwimmer c = new CompetitionSwimmer(getName(), getAge(), getPhoneNumber(), swimDiscipline);
             memberList.getCompetitionSwimmers().add(c);
-
 
 
             if (swimDiscipline.contains("Brystsvømning")) {

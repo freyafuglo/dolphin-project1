@@ -1,9 +1,9 @@
-public class Main{
+public class Main {
 
     UserInterface ui = new UserInterface();
     FileHandler fileHandler = new FileHandler();
 
-    Menu menu = new Menu("HOVEDMENU", "Vælg menupunkt: ", new String[]{
+    Menu menu = new Menu("HOVEDMENU", "Vælg menupunkt: ", new String[] {
             "1. Tilføj nyt medlem",
             "2. Rediger medlem",
             "3. Medlemsliste",
@@ -14,17 +14,13 @@ public class Main{
             "9. Afslut program"
     });
 
-    void run(){
-
+    void run() {
         fileHandler.loadFileCompetitionSwimmers();
         menu.menuFull();
         fileHandler.saveFileCompetitionSwimmers();
-
     }
 
-    public static void main(String[] args){
-
+    public static void main(String[] args) {
         new Main().run();
     }
-
 }

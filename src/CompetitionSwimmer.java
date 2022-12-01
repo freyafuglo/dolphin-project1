@@ -9,7 +9,6 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     private double butterflyTrainingResult;
 
     public CompetitionSwimmer() {
-
     }
 
     public CompetitionSwimmer(String name, int age, String phoneNumber, String swimDiscipline) {
@@ -17,11 +16,12 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
         setSwimDiscipline(swimDiscipline);
     }
 
-    public CompetitionSwimmer(String id, String name, int age, String phoneNumber, String swimDiscipline, Subscription subscription,
+    public CompetitionSwimmer(String id, String name, int age, String phoneNumber, String swimDiscipline,
+                              Subscription subscription,
                               double breastTrainingResult, double backTrainingResult,
                               double crawlTrainingResult, double butterflyTrainingResult) {
-
-        super(name, age, phoneNumber);
+        super(name, age, phoneNumber); ////problem 1 løst
+        setSwimDiscipline(swimDiscipline);
         setBreastTrainingResult(breastTrainingResult);
         setBackTrainingResult(backTrainingResult);
         setCrawlTrainingResult(crawlTrainingResult);
@@ -29,22 +29,15 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
 
     }
 
-
     // GETTERE
     public String getSwimDiscipline() {
         return swimDiscipline;
     }
 
-
-
     // SETTERE
     public void setSwimDiscipline(String swimDiscipline) {
         this.swimDiscipline = swimDiscipline;
     }
-
-
-
-
 
     public double getBackTrainingResult() {
         return backTrainingResult;
