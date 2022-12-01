@@ -10,13 +10,14 @@ public class Main{
             "4. Holdliste",
             "5. Top fem",
             "6. Regnskab",
+            "7. Angiv træningsresultat",
             "9. Afslut program"
     });
 
     void run(){
 
         fileHandler.loadFileCompetitionSwimmers();
-        menu.menuContent();
+        menu.menuFull();
 
     }
 
