@@ -1,0 +1,2 @@
+0001;alex;55;4324566;Rygsvømning, Butterfly, ;SENIOR
+0002;loke;45;54647844;Crawl, Rygsvømning, Brystsvømning, ;SENIOR
