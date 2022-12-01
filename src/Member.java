@@ -9,8 +9,11 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private String ID = "0000";
     private Subscription subscription;
 
-
     UserInterface ui = new UserInterface();
+
+    public Member(){
+
+    }
 
     public Member(String name, int age, String phoneNumber)
     {
@@ -26,6 +29,7 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         this.isActive = isActive;
     }
 
+    // SETTERE
     public void setAge(int age) {
         this.age = age;
     }
@@ -48,18 +52,19 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     }
 
     public void setSubscription() {
-        if (isActive)
-        {
-            if (age < 18)
-            {
+
+        if (isActive) {
+
+            if (age < 18) {
+
                 this.subscription = Subscription.JUNIOR;
             }
-            else if (age < 60)
-            {
+            else if (age < 60) {
+
                 this.subscription = Subscription.SENIOR;
             }
-            else
-            {
+            else {
+
                 this.subscription = Subscription.PENSIONIST;
             }
         }
@@ -68,6 +73,7 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
 
     }
 
+    // GETTERE
     public Subscription getSubscription() {
         return subscription;
     }

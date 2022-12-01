@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UserInterface { // EJERSKAB: ALLE
+public class UserInterface { // EJERSKAB: MATHIAS & CO
 
     Scanner in = new Scanner(System.in);
 
@@ -16,17 +16,30 @@ public class UserInterface { // EJERSKAB: ALLE
         return in.nextLine();
     }
 
+    public String scannerBug(){
+        return in.nextLine();
+    }
+
     public String readString(String msg){
         println(msg);
         return readString();
     }
 
     public int readInt(){
+
         return in.nextInt();
     }
 
     public int readInt(String msg){
         println(msg);
         return readInt();
+    }
+
+    public double readDouble() {
+        return in.nextDouble();
+    }
+    public double readDouble(String msg){
+        println(msg);
+       return readDouble();
     }
 }

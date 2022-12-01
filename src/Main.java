@@ -1,6 +1,7 @@
 public class Main{
 
     UserInterface ui = new UserInterface();
+    FileHandler fileHandler = new FileHandler();
 
     Menu menu = new Menu("HOVEDMENU", "Vælg menupunkt: ", new String[]{
             "1. Tilføj nyt medlem",
@@ -9,11 +10,15 @@ public class Main{
             "4. Holdliste",
             "5. Top fem",
             "6. Regnskab",
+            "7. Angiv træningsresultat",
+            "9. Afslut program"
     });
 
     void run(){
 
-        menu.fullMenu();
+        fileHandler.loadFileCompetitionSwimmers();
+        menu.menuFull();
+        fileHandler.saveFileCompetitionSwimmers();
 
     }
 

@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -20,14 +21,18 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
     public void saveFileCompetitionSwimmers(){
 
         try{
-            PrintStream p = new PrintStream(fileCompetitionSwimmers);
+            PrintStream p = new PrintStream(new FileOutputStream(fileCompetitionSwimmers));
             for (CompetitionSwimmer c: memberList.getCompetitionSwimmers()){
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
                 p.print(c.getPhoneNumber() + ";");
                 p.print(c.getSwimDiscipline() + ";");
-                p.println(c.getSubscription());
+                p.print(c.getSubscription()+";");
+                p.print(c.getBreastTrainingResult()+";");
+                p.print(c.getBackTrainingResult()+";");
+                p.print(c.getCrawlTrainingResult()+";");
+                p.println(c.getButterflyTrainingResult());
             }
         p.close();
         } catch (IOException e){
@@ -43,13 +48,12 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
             ui.println("I/O exception: " + e.getMessage());
         }
-
     }
 
     public void saveFileButterFlyers(){
@@ -60,7 +64,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
@@ -76,7 +80,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
@@ -92,7 +96,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.println(c.getPhoneNumber() + ";");
+                p.println(c.getPhoneNumber());
             }
             p.close();
         } catch (IOException e){
@@ -108,15 +112,34 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
         while(fileScanner.hasNext()){
             Scanner tokenScanner = new Scanner(fileScanner.nextLine()).useDelimiter(";");
 
-            int id = Integer.parseInt(tokenScanner.next());
+            String id = tokenScanner.next();
             String name = tokenScanner.next();
             int age = Integer.parseInt(tokenScanner.next());
             String phoneNumber = tokenScanner.next();
             String swimDiscipline = tokenScanner.next();
             Subscription subscription = Subscription.valueOf(tokenScanner.next());
+            double breast = Double.parseDouble(tokenScanner.next());
+            double back = Double.parseDouble(tokenScanner.next());
+            double crawl = Double.parseDouble(tokenScanner.next());
+            double butter = Double.parseDouble(tokenScanner.next());
 
-            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber, swimDiscipline, subscription);
+
+
+            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber, swimDiscipline, subscription,breast, back, crawl, butter );
             memberList.getCompetitionSwimmers().add(c);
+
+            if (swimDiscipline.contains("Brystsvømning")){
+                memberList.getBreastStrokers().add(c);
+            }
+            if (swimDiscipline.contains("Rygsvømning")){
+                memberList.getBackStrokers().add(c);
+            }
+            if (swimDiscipline.contains("Crawl")){
+                memberList.getCrawlSwimmers().add(c);
+            }
+            if (swimDiscipline.contains("Butterfly")){
+                memberList.getButterFlyers().add(c);
+            }
         }
         fileScanner.close();
 

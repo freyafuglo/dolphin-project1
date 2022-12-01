@@ -10,7 +10,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     MenuMethods menuMethods = new MenuMethods();
     FileHandler fileHandler = new FileHandler();
     MemberList memberList = new MemberList();
-
+    TrainingResult trainingResult = new TrainingResult();
 
     public Menu() {
 
@@ -38,7 +38,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
             try {
                 menuChoice = Integer.parseInt(ui.readString());
 
-                if (menuChoice > 0 && menuChoice <= menuItems.length) {
+                if (menuChoice > 0 && menuChoice <= menuItems.length || menuChoice == 9) {
                     validInput = true;
 
                 } else {
@@ -54,65 +54,58 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
         return menuChoice;
     }
 
-    public void menuContent() {
-
-        printMenu();
-        switchFunction();
-    }
-
-    public void fullMenu() {
-        String backToMenu;
+    public void menuFull() {
+        boolean done = false;
 
         do {
-            menuContent();
+            printMenu();
+            switch (readChoice()) {
+                case 1:
+                    ui.println("TILFØJ NYT MEDLEM");
+                    menuMethods.addMember();
+                    menuMethods.swimDiscipline();
+                    break;
 
-            backToMenu = ui.readString("Tilbage til hovedmenu [j/n]?:");
+                case 2:
+                    ui.println("REDIGER MEDLEM");
+                    //Bestem om aktiv eller passiv
+                    String aktivEllerPassiv = ui.readString("Tast ja for aktiv eller nej for passiv");
 
-        } while (backToMenu.equalsIgnoreCase("j"));
+                    if (aktivEllerPassiv.equals("ja")) {
+                    }
+                    break;
 
-        ui.println("Hey heeey");
-    }
+                case 3:
+                    ui.println("MEDLEMSLISTE");
+                    ui.println(memberList.getCompetitionSwimmers().toString());
+                    break;
 
-    public void switchFunction() {
+                case 4:
+                    ui.println("HOLDLISTE");
+                    menuMethods.teamTotals();
+                    break;
 
-        switch (readChoice()) {
-            case 1:
-                ui.println("TILFØJ NYT MEDLEM");
-                menuMethods.addMember();
-                menuMethods.swimDiscipline();
-                break;
+                case 5:
+                    ui.println("TOP FEM");
 
-            case 2:
-                ui.println("REDIGER MEDLEM");
-                //Bestem om aktiv eller passiv
-                String aktivEllerPassiv = ui.readString("Tast ja for aktiv eller nej for passiv");
+                    break;
 
-                if (aktivEllerPassiv.equals("ja")) {
-                }
-                break;
+                case 6:
+                    ui.println("REGNSKAB");
+                    break;
+                case 7:
+                    ui.println("ANGIV TRÆNINGSRESULTAT");
+                    trainingResult.enterTrainingResult();
+                    break;
+                case 9:
+                    ui.println("Farvel og tak!");
+                    done = true;
+                    break;
 
-            case 3:
-                ui.println("MEDLEMSLISTE");
-                fileHandler.loadFileCompetitionSwimmers();
-                ui.println(memberList.getCompetitionSwimmers().toString());
-                break;
+                default:
+                    break;
 
-            case 4:
-                ui.println("HOLDLISTE");
-                menuMethods.teamTotals();
-                break;
-
-            case 5:
-                ui.println("TOP FEM");
-                break;
-
-            case 6:
-                ui.println("REGNSKAB");
-                break;
-
-            default:
-                break;
-
-        }
+            }
+        } while (!done);
     }
 }
