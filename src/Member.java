@@ -9,7 +9,6 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private String ID = "0000";
     private Subscription subscription;
 
-
     UserInterface ui = new UserInterface();
 
     public Member(){

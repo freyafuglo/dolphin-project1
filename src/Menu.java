@@ -93,7 +93,6 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
 
             case 3:
                 ui.println("MEDLEMSLISTE");
-                fileHandler.loadFileCompetitionSwimmers();
                 ui.println(memberList.getCompetitionSwimmers().toString());
                 break;
 

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UserInterface { // EJERSKAB: ALLE
+public class UserInterface { // EJERSKAB: MATHIAS & CO
 
     Scanner in = new Scanner(System.in);
 
