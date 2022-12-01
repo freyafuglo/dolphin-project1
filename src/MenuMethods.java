@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class MenuMethods {
+public class MenuMethods { //
     private String teamOrNot;
     private String name;
     private String phoneNumber;
