@@ -6,7 +6,11 @@ public class MenuMethods extends Member {
     MemberList memberList = new MemberList();
     FileHandler fileHandler = new FileHandler();
 
-    CompetitionSorterByTrainingresult sorter = new CompetitionSorterByTrainingresult();
+    // SORTERING
+    CompetitionSorterBreast sorterBreast = new CompetitionSorterBreast();
+    CompetitionSorterBack sorterBack = new CompetitionSorterBack();
+    CompetitionSorterCrawl sorterCrawl = new CompetitionSorterCrawl();
+    CompetitionSorterButterfly sorterButterfly = new CompetitionSorterButterfly();
 
 
 
@@ -86,34 +90,34 @@ public class MenuMethods extends Member {
     // SORTERINGSMETODER
 
     public void sortingBreast() {
-        Collections.sort(memberList.getBreastStrokers(), sorter);
+        Collections.sort(memberList.getBreastStrokers(), sorterBreast);
         ui.println("BRYSTSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
-            System.out.println(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
+            ui.printDouble(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
         }
     }
 
     public void sortingBack() {
-        Collections.sort(memberList.getBackStrokers(), sorter);
-        ui.println("BRYSTSVØMMERE TOP FEM");
+        Collections.sort(memberList.getBackStrokers(), sorterBack);
+        ui.println("RYGSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
-            System.out.println(memberList.getBackStrokers().get(i).getBackTrainingResult());
+            ui.printDouble(memberList.getBackStrokers().get(i).getBackTrainingResult());
         }
     }
 
     public void sortingCrawl() {
-        Collections.sort(memberList.getCrawlSwimmers(), sorter);
-        ui.println("BRYSTSVØMMERE TOP FEM");
+        Collections.sort(memberList.getCrawlSwimmers(), sorterCrawl);
+        ui.println("CRAWLSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
-            System.out.println(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
+            ui.printDouble(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
         }
     }
 
     public void sortingButterfly() {
-        Collections.sort(memberList.getButterFlyers(), sorter);
-        ui.println("BRYSTSVØMMERE TOP FEM");
+        Collections.sort(memberList.getButterFlyers(), sorterButterfly);
+        ui.println("BUTTERFLYSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
-            System.out.println(memberList.getButterFlyers().get(i).getButterflyTrainingResult());
+            ui.printDouble(memberList.getButterFlyers().get(i).getButterflyTrainingResult());
         }
     }
 
