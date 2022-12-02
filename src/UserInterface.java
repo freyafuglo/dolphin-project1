@@ -12,7 +12,7 @@ public class UserInterface { // EJERSKAB: MATHIAS & CO
         System.out.println(msg);
     }
     public void printDouble(double msg) {
-        System.out.print(msg);
+        System.out.println(msg);
     }
 
     public String readString() {
