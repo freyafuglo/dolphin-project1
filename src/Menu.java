@@ -85,7 +85,10 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     break;
                 case 5:
                     ui.println("TOP FEM");
-                    menuMethods.sortingMethod();
+                    menuMethods.sortingBreast();
+                    menuMethods.sortingBack();
+                    menuMethods.sortingCrawl();
+                    menuMethods.sortingButterfly();
                     break;
                 case 6:
                     ui.println("REGNSKAB");

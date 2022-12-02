@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Collections;
 
 public class MenuMethods extends Member {
@@ -7,7 +6,7 @@ public class MenuMethods extends Member {
     MemberList memberList = new MemberList();
     FileHandler fileHandler = new FileHandler();
 
-    CompetitionSorterByTrainingresult sorterBreast = new CompetitionSorterByTrainingresult();
+    CompetitionSorterByTrainingresult sorter = new CompetitionSorterByTrainingresult();
 
 
 
@@ -87,7 +86,7 @@ public class MenuMethods extends Member {
     // SORTERINGSMETODER
 
     public void sortingBreast() {
-        Collections.sort(memberList.getBreastStrokers(), sorterBreast);
+        Collections.sort(memberList.getBreastStrokers(), sorter);
         ui.println("BRYSTSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
             System.out.println(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
@@ -95,26 +94,26 @@ public class MenuMethods extends Member {
     }
 
     public void sortingBack() {
-        Collections.sort(memberList.getBackStrokers(), sorterBreast);
+        Collections.sort(memberList.getBackStrokers(), sorter);
         ui.println("BRYSTSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
-            System.out.println(memberList.getBackStrokers().get(i).getBreastTrainingResult());
+            System.out.println(memberList.getBackStrokers().get(i).getBackTrainingResult());
         }
     }
 
     public void sortingCrawl() {
-        Collections.sort(memberList.getCrawlSwimmers(), sorterBreast);
+        Collections.sort(memberList.getCrawlSwimmers(), sorter);
         ui.println("BRYSTSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
-            System.out.println(memberList.getCrawlSwimmers().get(i).getBreastTrainingResult());
+            System.out.println(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
         }
     }
 
     public void sortingButterfly() {
-        Collections.sort(memberList.getButterFlyers(), sorterBreast);
+        Collections.sort(memberList.getButterFlyers(), sorter);
         ui.println("BRYSTSVØMMERE TOP FEM");
         for(int i = 0; i < 5; i++){
-            System.out.println(memberList.getButterFlyers().get(i).getBreastTrainingResult());
+            System.out.println(memberList.getButterFlyers().get(i).getButterflyTrainingResult());
         }
     }
 

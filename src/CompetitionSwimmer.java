@@ -20,7 +20,7 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
                               Subscription subscription,
                               double breastTrainingResult, double backTrainingResult,
                               double crawlTrainingResult, double butterflyTrainingResult) {
-        super(name, age, phoneNumber); ////problem 1 løst
+        super(name, age, phoneNumber);
         setSwimDiscipline(swimDiscipline);
         setBreastTrainingResult(breastTrainingResult);
         setBackTrainingResult(backTrainingResult);
