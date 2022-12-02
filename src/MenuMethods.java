@@ -13,7 +13,7 @@ public class MenuMethods extends Member {
     CompetitionSorterButterfly sorterButterfly = new CompetitionSorterButterfly();
 
 
-
+    // EJERSKAB FREYA, DITTE, MATHIAS
     public void addMember() {
         setName(ui.readString("Indtast navn: "));
         setAge(ui.readInt("Indtast alder: "));
@@ -22,6 +22,7 @@ public class MenuMethods extends Member {
         teamOrNot = ui.readString("Skal medlemmet træne på hold? ");
     }
 
+    // EJERSKAB ALEXANDER & FREYA
     public void swimDiscipline() {
         boolean done = false;
 
@@ -78,6 +79,7 @@ public class MenuMethods extends Member {
         }
     }
 
+    // EJERSKAB ALEXANDER & MATHIAS
     public void teamTotals() {
         ui.println("Antal konkurrencesvømmere:  " + memberList.getCompetitionSwimmers().size());
         ui.println("Bryst: " + memberList.getBreastStrokers().size());
@@ -87,7 +89,7 @@ public class MenuMethods extends Member {
 
     }
 
-    // SORTERINGSMETODER
+    // SORTERINGSMETODER // EJERSKAB DITTE & FREYA
 
     public void sortingBreast() {
         Collections.sort(memberList.getBreastStrokers(), sorterBreast);

@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class CompetitionSorterCrawl implements Comparator<CompetitionSwimmer> {
+public class CompetitionSorterCrawl implements Comparator<CompetitionSwimmer> { // EJERSKAB: Ditte & Co
 
     public int compare(CompetitionSwimmer o1, CompetitionSwimmer o2) {
 

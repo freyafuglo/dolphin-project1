@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class CompetitionSorterBreast implements Comparator<CompetitionSwimmer>
+public class CompetitionSorterBreast implements Comparator<CompetitionSwimmer> // Freya & co
 {
     @Override
     public int compare(CompetitionSwimmer o1, CompetitionSwimmer o2) {
