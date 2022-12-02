@@ -34,37 +34,37 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
         return swimDiscipline;
     }
 
-    // SETTERE
-    public void setSwimDiscipline(String swimDiscipline) {
-        this.swimDiscipline = swimDiscipline;
-    }
-
     public double getBackTrainingResult() {
         return backTrainingResult;
-    }
-
-    public void setBackTrainingResult(double backTrainingResult) {
-        this.backTrainingResult = backTrainingResult;
     }
 
     public double getBreastTrainingResult() {
         return breastTrainingResult;
     }
 
-    public void setBreastTrainingResult(double breastTrainingResult) {
-        this.breastTrainingResult = breastTrainingResult;
-    }
-
     public double getCrawlTrainingResult() {
         return crawlTrainingResult;
     }
 
-    public void setCrawlTrainingResult(double crawlTrainingResult) {
-        this.crawlTrainingResult = crawlTrainingResult;
-    }
-
     public double getButterflyTrainingResult() {
         return butterflyTrainingResult;
+    }
+
+    // SETTERE
+    public void setSwimDiscipline(String swimDiscipline) {
+        this.swimDiscipline = swimDiscipline;
+    }
+
+    public void setBackTrainingResult(double backTrainingResult) {
+        this.backTrainingResult = backTrainingResult;
+    }
+
+    public void setBreastTrainingResult(double breastTrainingResult) {
+        this.breastTrainingResult = breastTrainingResult;
+    }
+
+    public void setCrawlTrainingResult(double crawlTrainingResult) {
+        this.crawlTrainingResult = crawlTrainingResult;
     }
 
     public void setButterflyTrainingResult(double butterflyTrainingResult) {
