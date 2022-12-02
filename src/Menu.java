@@ -12,6 +12,8 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     MemberList memberList = new MemberList();
     TrainingResult trainingResult = new TrainingResult();
 
+
+
     public Menu() {
 
     }
@@ -83,6 +85,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     break;
                 case 5:
                     ui.println("TOP FEM");
+                    menuMethods.sortingMethod();
                     break;
                 case 6:
                     ui.println("REGNSKAB");

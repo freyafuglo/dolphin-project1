@@ -1,6 +1,10 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class MemberList { // EJERSKAB: ALEXANDER & FREYA & MATHIAS
+
+    UserInterface ui = new UserInterface();
 
     // ARRAYLISTS
     private static ArrayList<CompetitionSwimmer> competitionSwimmers = new ArrayList<>();
@@ -37,4 +41,9 @@ public class MemberList { // EJERSKAB: ALEXANDER & FREYA & MATHIAS
     public ArrayList<RecreationalSwimmer> getRecreationalSwimmers() {
         return recreationalSwimmers;
     }
+
+    public ArrayList<CompetitionSwimmer> sortedList() { return sortedList; }
+
+
 }
+
