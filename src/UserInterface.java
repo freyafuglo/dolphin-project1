@@ -11,6 +11,9 @@ public class UserInterface { // EJERSKAB: MATHIAS & CO
     public void println(String msg) {
         System.out.println(msg);
     }
+    public void printDouble(double msg) {
+        System.out.print(msg);
+    }
 
     public String readString() {
         return in.nextLine();
