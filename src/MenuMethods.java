@@ -94,7 +94,7 @@ public class MenuMethods extends Member {
     public void sortingBreast() {
         Collections.sort(memberList.getBreastStrokers(), sorterBreast);
         ui.println("BRYSTSVØMMERE TOP FEM");
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             ui.printDouble(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
         }
     }
@@ -102,7 +102,7 @@ public class MenuMethods extends Member {
     public void sortingBack() {
         Collections.sort(memberList.getBackStrokers(), sorterBack);
         ui.println("RYGSVØMMERE TOP FEM");
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             ui.printDouble(memberList.getBackStrokers().get(i).getBackTrainingResult());
         }
     }
@@ -110,18 +110,47 @@ public class MenuMethods extends Member {
     public void sortingCrawl() {
         Collections.sort(memberList.getCrawlSwimmers(), sorterCrawl);
         ui.println("CRAWLSVØMMERE TOP FEM");
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             ui.printDouble(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
         }
     }
 
     public void sortingButterfly() {
         Collections.sort(memberList.getButterFlyers(), sorterButterfly);
-        ui.println("BUTTERFLYSVØMMERE TOP FEM");
-        for(int i = 0; i < 5; i++){
-            ui.printDouble(memberList.getButterFlyers().get(i).getButterflyTrainingResult());
-        }
+        ui.println("BUTTERFLYSVØMMERE TOP FEM Junior");
+        int count = 0;
+        do {
+            for (int j = 0; j < memberList.getButterFlyers().size(); j++) {
+                if (memberList.getButterFlyers().get(j).getSubscription() == Subscription.JUNIOR) {
+                    ui.printDouble(memberList.getButterFlyers().get(j).getButterflyTrainingResult());
+                    count++;
+                    if (count == 5){
+                        j = memberList.getButterFlyers().size();
+                    }
+                }
+            }
+        } while(count <5);
+
+
+        ui.println("BUTTERFLYSVØMMERE TOP FEM Senior");
+        int counter = 0;
+
+
+        do {
+            for (int i = 0; i < memberList.getButterFlyers().size(); i++) {
+                if (memberList.getButterFlyers().get(i).getSubscription() == Subscription.SENIOR ||
+                        memberList.getButterFlyers().get(i).getSubscription() == Subscription.PENSIONIST) {
+                    ui.printDouble(memberList.getButterFlyers().get(i).getButterflyTrainingResult());
+                    counter++;
+                    if (counter == 5){
+                        i = memberList.getButterFlyers().size();
+                    }
+                }
+            }
+        } while (counter < 5);
+
     }
-
-
 }
+
+
+
