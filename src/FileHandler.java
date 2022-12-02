@@ -12,12 +12,8 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
 
     // FIL INSTANTIERING
     File fileCompetitionSwimmers = new File("competitionSwimmers.txt");
-    File fileCrawlSwimmers = new File("crawlSwimmers.txt");
-    File fileButterFlyers = new File("butterFlyers.txt");
-    File fileBreastStrokers = new File("breastStrokers.txt");
-    File fileBackStrokers = new File("backStrokers.txt");
 
-    // SAVE FILE METODER
+    // SAVE FILE METODE
     public void saveFileCompetitionSwimmers(){
 
         try{
@@ -40,71 +36,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
         }
     }
 
-    public void saveFileCrawlSwimmers(){
-
-        try{
-            PrintStream p = new PrintStream(fileCrawlSwimmers);
-            for (CompetitionSwimmer c: memberList.getCrawlSwimmers()){
-                p.print(c.getID() + ";");
-                p.print(c.getName() + ";");
-                p.print(c.getAge() + ";");
-                p.println(c.getPhoneNumber());
-            }
-            p.close();
-        } catch (IOException e){
-            ui.println("I/O exception: " + e.getMessage());
-        }
-    }
-
-    public void saveFileButterFlyers(){
-
-        try{
-            PrintStream p = new PrintStream(fileButterFlyers);
-            for (CompetitionSwimmer c: memberList.getButterFlyers()){
-                p.print(c.getID() + ";");
-                p.print(c.getName() + ";");
-                p.print(c.getAge() + ";");
-                p.println(c.getPhoneNumber());
-            }
-            p.close();
-        } catch (IOException e){
-            ui.println("I/O exception: " + e.getMessage());
-        }
-    }
-
-    public void saveFileBreastStrokers(){
-
-        try{
-            PrintStream p = new PrintStream(fileBreastStrokers);
-            for (CompetitionSwimmer c: memberList.getBreastStrokers()){
-                p.print(c.getID() + ";");
-                p.print(c.getName() + ";");
-                p.print(c.getAge() + ";");
-                p.println(c.getPhoneNumber());
-            }
-            p.close();
-        } catch (IOException e){
-            ui.println("I/O exception: " + e.getMessage());
-        }
-    }
-
-    public void saveFileBackStrokers(){
-
-        try{
-            PrintStream p = new PrintStream(fileBackStrokers);
-            for (CompetitionSwimmer c: memberList.getBackStrokers()){
-                p.print(c.getID() + ";");
-                p.print(c.getName() + ";");
-                p.print(c.getAge() + ";");
-                p.println(c.getPhoneNumber());
-            }
-            p.close();
-        } catch (IOException e){
-            ui.println("I/O exception: " + e.getMessage());
-        }
-    }
-
-    // LOAD FILE METODER
+    // LOAD FILE METODE, SOM AUT. SORTERER EFTER DISCPLINER
     public void loadFileCompetitionSwimmers(){
         memberList.getCompetitionSwimmers().clear();
         try{
