@@ -2,6 +2,8 @@ import java.util.Collections;
 
 public class MenuMethods extends Member {
     private String teamOrNot;
+
+    int counter = 0;
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
     FileHandler fileHandler = new FileHandler();
@@ -91,66 +93,163 @@ public class MenuMethods extends Member {
 
     // SORTERINGSMETODER // EJERSKAB DITTE & FREYA
 
+
     public void sortingBreast() {
         Collections.sort(memberList.getBreastStrokers(), sorterBreast);
-        ui.println("BRYSTSVØMMERE TOP FEM");
-        for (int i = 0; i < 5; i++) {
-            ui.printDouble(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
+
+        // JUNIOR
+        ui.println("BRYSTSVØMMERE TOP FEM JUNIOR");
+
+        counter = 0;
+
+            for (int i = 0; i < memberList.getBreastStrokers().size(); i++) {
+                if(memberList.getBreastStrokers().get(i).getSubscription() == Subscription.JUNIOR){
+                ui.printDouble(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
+                counter++;
+                if(counter == 5){
+                    i = memberList.getBreastStrokers().size();
+                    }
+                }
+            }
+
+
+        // SENIOR
+
+        ui.println("RYGSVØMMERE TOP FEM SENIOR");
+
+        counter = 0;
+
+            for (int i = 0; i < memberList.getBreastStrokers().size(); i++) {
+                if(memberList.getBreastStrokers().get(i).getSubscription() == Subscription.SENIOR){
+                    ui.printDouble(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
+                    counter++;
+                    if(counter == 5){
+                        i = memberList.getBreastStrokers().size();
+                    }
+                }
+            }
         }
-    }
+
+
 
     public void sortingBack() {
         Collections.sort(memberList.getBackStrokers(), sorterBack);
-        ui.println("RYGSVØMMERE TOP FEM");
-        for (int i = 0; i < 5; i++) {
-            ui.printDouble(memberList.getBackStrokers().get(i).getBackTrainingResult());
-        }
+        ui.println("RYGSVØMMERE TOP FEM JUNIOR");
+
+        // JUNIOR
+
+        counter = 0;
+
+            for (int i = 0; i < memberList.getBackStrokers().size(); i++) {
+                if(memberList.getBackStrokers().get(i).getSubscription() == Subscription.JUNIOR){
+                ui.printDouble(memberList.getBackStrokers().get(i).getBackTrainingResult());
+                counter++;
+                if(counter == 5){
+                      i = memberList.getBackStrokers().size();
+                    }
+                }
+            }
+
+        // SENIOR
+
+        counter = 0;
+
+        ui.println("RYGSVØMMERE TOP FEM SENIOR");
+
+            for (int i = 0; i < memberList.getBackStrokers().size(); i++) {
+                if(memberList.getBackStrokers().get(i).getSubscription() == Subscription.SENIOR){
+                    ui.printDouble(memberList.getBackStrokers().get(i).getBackTrainingResult());
+                    counter++;
+                    if(counter == 5){
+                        i = memberList.getBackStrokers().size();
+                    }
+                }
+            }
+
+
+
+
     }
 
     public void sortingCrawl() {
         Collections.sort(memberList.getCrawlSwimmers(), sorterCrawl);
-        ui.println("CRAWLSVØMMERE TOP FEM");
-        for (int i = 0; i < 5; i++) {
-            ui.printDouble(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
-        }
+
+        // JUNIOR
+
+        ui.println("CRAWLSVØMMERE TOP FEM JUNIOR");
+
+        counter = 0;
+
+
+            for (int i = 0; i < memberList.getCrawlSwimmers().size(); i++) {
+                if (memberList.getCrawlSwimmers().get(i).getSubscription() == Subscription.JUNIOR) {
+                    ui.printDouble(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
+                    counter++;
+                    if (counter == 5) {
+                        i = memberList.getCrawlSwimmers().size();
+                    }
+                }
+            }
+
+        // SENIOR
+
+        counter = 0;
+
+        ui.println("CRAWLSVØMMERE TOP FEM SENIOR");
+
+            for (int i = 0; i < memberList.getCrawlSwimmers().size(); i++) {
+                if (memberList.getCrawlSwimmers().get(i).getSubscription() == Subscription.SENIOR) {
+                    ui.printDouble(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
+                    counter++;
+                    if (counter == 5) {
+                        i = memberList.getCrawlSwimmers().size();
+                    }
+                }
+            }
     }
+
 
     public void sortingButterfly() {
         Collections.sort(memberList.getButterFlyers(), sorterButterfly);
+
+        // JUNIOR
+
         ui.println("BUTTERFLYSVØMMERE TOP FEM Junior");
-        int count = 0;
-        do {
+
+        counter = 0;
+
             for (int j = 0; j < memberList.getButterFlyers().size(); j++) {
                 if (memberList.getButterFlyers().get(j).getSubscription() == Subscription.JUNIOR) {
                     ui.printDouble(memberList.getButterFlyers().get(j).getButterflyTrainingResult());
-                    count++;
-                    if (count == 5){
+                    counter++;
+                    if (counter == 5) {
                         j = memberList.getButterFlyers().size();
                     }
                 }
             }
-        } while(count <5);
 
+
+        // SENIOR
 
         ui.println("BUTTERFLYSVØMMERE TOP FEM Senior");
-        int counter = 0;
 
+        counter = 0;
 
-        do {
             for (int i = 0; i < memberList.getButterFlyers().size(); i++) {
                 if (memberList.getButterFlyers().get(i).getSubscription() == Subscription.SENIOR ||
                         memberList.getButterFlyers().get(i).getSubscription() == Subscription.PENSIONIST) {
                     ui.printDouble(memberList.getButterFlyers().get(i).getButterflyTrainingResult());
                     counter++;
-                    if (counter == 5){
+                    if (counter == 5) {
                         i = memberList.getButterFlyers().size();
                     }
                 }
             }
-        } while (counter < 5);
+
 
     }
 }
+
 
 
 

@@ -12,10 +12,10 @@
 0012;frida;45;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;SENIOR;9.1;23.3;12.3;21.3
 0013;fremming;23;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;SENIOR;9.2;12.12;23.2;30.1
 0014;frå;17;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;23.1;12.2;22.1;20.0
-0015;fritta;14;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;17.1;23.3;30.0;23.2
-0016;fritto;11;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;17.1;23.3;30.0;23.2
-0017;frixa;13;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;17.1;23.3;30.0;23.2
-0018;frixala;13;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;17.1;23.3;30.0;23.2
-0019;pommefrix;14;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;17.1;23.3;30.0;23.2
-0020;frixol;17;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;17.1;23.3;30.0;23.2
+0015;fritta;14;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;19.2;23.3;18.0;23.2
+0016;fritto;11;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;16.1;23.3;12.0;43.2
+0017;frixa;13;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;18.1;23.3;10.0;13.2
+0018;frixala;13;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;20.1;23.3;20.0;43.4
+0019;pommefrix;14;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;21.1;23.3;30.0;23.2
+0020;frixol;17;8743928;Brystsvømning-Rygsvømning-Crawl-Butterfly;JUNIOR;15.2;23.3;21.0;22.2
 0021;alex;12;345678;Brystsvømning-Rygsvømning-Crawl-Butterfly-;JUNIOR;2.0;3.4;5.0;6.0
