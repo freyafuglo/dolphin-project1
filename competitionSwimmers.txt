@@ -1,0 +1,3 @@
+0001;Connie;43;98765432;Brystsvømning-Rygsvømning-;SENIOR;13.45;0.0;0.0;0.0
+0002;Bjarne;33;234565678;Brystsvømning-Rygsvømning-;SENIOR;20.45;0.0;0.0;0.0
+0003;Konrad;41;869540392;Brystsvømning-Butterfly-;SENIOR;5.1;0.0;0.0;0.0

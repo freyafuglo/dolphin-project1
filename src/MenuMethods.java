@@ -1,10 +1,13 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MenuMethods extends Member {
     private String teamOrNot;
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
     FileHandler fileHandler = new FileHandler();
+
+    CompetitionSorterByTrainingresult sorterBreast = new CompetitionSorterByTrainingresult();
 
 
 
@@ -79,6 +82,40 @@ public class MenuMethods extends Member {
         ui.println("Crawl: " + memberList.getCrawlSwimmers().size());
         ui.println("Butterfly: " + memberList.getButterFlyers().size());
 
+    }
+
+    // SORTERINGSMETODER
+
+    public void sortingBreast() {
+        Collections.sort(memberList.getBreastStrokers(), sorterBreast);
+        ui.println("BRYSTSVØMMERE TOP FEM");
+        for(int i = 0; i < 5; i++){
+            System.out.println(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
+        }
+    }
+
+    public void sortingBack() {
+        Collections.sort(memberList.getBackStrokers(), sorterBreast);
+        ui.println("BRYSTSVØMMERE TOP FEM");
+        for(int i = 0; i < 5; i++){
+            System.out.println(memberList.getBackStrokers().get(i).getBreastTrainingResult());
+        }
+    }
+
+    public void sortingCrawl() {
+        Collections.sort(memberList.getCrawlSwimmers(), sorterBreast);
+        ui.println("BRYSTSVØMMERE TOP FEM");
+        for(int i = 0; i < 5; i++){
+            System.out.println(memberList.getCrawlSwimmers().get(i).getBreastTrainingResult());
+        }
+    }
+
+    public void sortingButterfly() {
+        Collections.sort(memberList.getButterFlyers(), sorterBreast);
+        ui.println("BRYSTSVØMMERE TOP FEM");
+        for(int i = 0; i < 5; i++){
+            System.out.println(memberList.getButterFlyers().get(i).getBreastTrainingResult());
+        }
     }
 
 
