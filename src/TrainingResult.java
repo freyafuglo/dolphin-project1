@@ -34,7 +34,6 @@ public class TrainingResult {
                         ui.println("Brystsvømning:");
                         c.setBreastTrainingResult(ui.readDouble("Indtast træningsresultat: "));
                     }
-
                     case 2 -> {
                         ui.println("Rygsvømning:");
                         c.setBackTrainingResult(ui.readDouble("Indtast træningsresultat: "));
@@ -49,15 +48,13 @@ public class TrainingResult {
                     }
                     case 5 -> done = true;
                 }
-            }while (!done);
+            } while (!done);
+
             ui.println(c.getName() + " - "+ c.getID());
             ui.println("Bryst. "+c.getBreastTrainingResult());
             ui.println("Ryg. "+c.getBackTrainingResult());
             ui.println("Crawl. "+c.getCrawlTrainingResult());
             ui.println("Butterfly. "+c.getButterflyTrainingResult());
-
-
-
         }}
     }
 }

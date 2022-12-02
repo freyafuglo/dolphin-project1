@@ -123,11 +123,12 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             double crawl = Double.parseDouble(tokenScanner.next());
             double butter = Double.parseDouble(tokenScanner.next());
 
+            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber,
+                    swimDiscipline, subscription,breast, back, crawl, butter );
 
-
-            CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber, swimDiscipline, subscription,breast, back, crawl, butter );
             memberList.getCompetitionSwimmers().add(c);
 
+            //problem 2 løst
             if (swimDiscipline.contains("Brystsvømning")){
                 memberList.getBreastStrokers().add(c);
             }
