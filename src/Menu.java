@@ -87,10 +87,12 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                 case 6:
                     ui.println("REGNSKAB");
                     break;
+
                 case 7:
                     ui.println("ANGIV TRÆNINGSRESULTAT");
                     trainingResult.enterTrainingResult();
                     break;
+
                 case 9:
                     ui.println("Farvel og tak!");
                     done = true;
