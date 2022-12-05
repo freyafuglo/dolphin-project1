@@ -11,7 +11,7 @@ public class Main {
             "3. Medlemsliste",
             "4. Holdliste",
             "5. Top fem",
-            "6. Regnskab",
+            "6. Restanceliste",
             "7. Angiv træningsresultat",
             "9. Afslut program"
     });

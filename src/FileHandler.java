@@ -29,7 +29,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getBreastTrainingResult() + ";");
                 p.print(c.getBackTrainingResult() + ";");
                 p.print(c.getCrawlTrainingResult() + ";");
-                p.println(c.getButterflyTrainingResult()+";");
+                p.print(c.getButterflyTrainingResult()+";");
                 p.println(c.isInArrears());
             }
         p.close();
@@ -45,7 +45,8 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
                 p.print(c.getPhoneNumber() + ";");
-                p.println(c.getSubscription());
+                p.print(c.getSubscription() + ";");
+                p.println(c.isInArrears());
 
             }
             p.close();
@@ -72,10 +73,10 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             double back = Double.parseDouble(tokenScanner.next());
             double crawl = Double.parseDouble(tokenScanner.next());
             double butter = Double.parseDouble(tokenScanner.next());
-            boolean isArrears = Boolean.parseBoolean(tokenScanner.next());
+            boolean inArrears = Boolean.parseBoolean(tokenScanner.next());
 
             CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber,
-                    swimDiscipline, subscription,breast, back, crawl, butter, isArrears );
+                    swimDiscipline, subscription,breast, back, crawl, butter, inArrears );
 
             memberList.getCompetitionSwimmers().add(c);
 
@@ -112,8 +113,9 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 int age = Integer.parseInt(tokenScanner.next());
                 String phoneNumber = tokenScanner.next();
                 Subscription subscription = Subscription.valueOf(tokenScanner.next());
+                boolean inArrears = Boolean.parseBoolean(tokenScanner.next());
 
-                RecreationalSwimmer r = new RecreationalSwimmer(id, name, age, phoneNumber, subscription);
+                RecreationalSwimmer r = new RecreationalSwimmer(id, name, age, phoneNumber, subscription, inArrears);
                 memberList.getRecreationalSwimmers().add(r);
 
             }

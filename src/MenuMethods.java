@@ -73,11 +73,11 @@ public class MenuMethods extends Member {
                     c.getPhoneNumber() + "\n" + c.getSubscription() + "\n" + c.getID() + "\n" +
                     c.getSwimDiscipline());
         } else {
-            RecreationalSwimmer m = new RecreationalSwimmer(getName(), getAge(), getPhoneNumber());
-            ui.println(m.getName() + "\n" + m.getAge() + "\n" +
-                    m.getPhoneNumber() + "\n" + m.getSubscription() + "\n" + m.getID());
+            RecreationalSwimmer r = new RecreationalSwimmer(getName(), getAge(), getPhoneNumber());
+            ui.println(r.getName() + "\n" + r.getAge() + "\n" +
+                    r.getPhoneNumber() + "\n" + r.getSubscription() + "\n" + r.getID());
 
-            memberList.getRecreationalSwimmers().add(m);
+            memberList.getRecreationalSwimmers().add(r);
             System.out.println(memberList.getRecreationalSwimmers().get(0));
         }
     }
@@ -167,26 +167,28 @@ public class MenuMethods extends Member {
         }
     }
 
-    public void getInArrears(){
+    public void getInArrears() {
         ui.println("Medlemmer i restance: ");
         System.out.printf("%s%13s%n", "ID", "NAVN");
 
         for (int i = 0; i < memberList.getCompetitionSwimmers().size(); i++) {
             if (memberList.getCompetitionSwimmers().get(i).isInArrears()) {
-                    System.out.printf("%-11s", "[" +memberList.getCompetitionSwimmers().get(i).getID() + "]");
-                    System.out.printf("%-30s%n", memberList.getCompetitionSwimmers().get(i).getName());
-                }
+                System.out.printf("%-11s", "[" + memberList.getCompetitionSwimmers().get(i).getID() + "]");
+                System.out.printf("%-30s%n", memberList.getCompetitionSwimmers().get(i).getName());
+            }
+        }
 
 
-            for (int j = 0; j < memberList.getRecreationalSwimmers().size(); j++) {
-                if (memberList.getRecreationalSwimmers().get(i).isInArrears()){
-                    System.out.printf("%-11s", "[" +memberList.getRecreationalSwimmers().get(i).getID() + "]");
-                    System.out.printf("%-30s%n", memberList.getRecreationalSwimmers().get(i).getName());
-                }
+        for (int i = 0; i < memberList.getRecreationalSwimmers().size(); i++) {
+            if (memberList.getRecreationalSwimmers().get(i).isInArrears()) {
+                System.out.printf("%-11s", "[" + memberList.getRecreationalSwimmers().get(i).getID() + "]");
+                System.out.printf("%-30s%n", memberList.getRecreationalSwimmers().get(i).getName());
             }
         }
     }
 }
+
+
 
 
 
