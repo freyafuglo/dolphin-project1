@@ -17,9 +17,9 @@ public class Main {
     });
 
     void run() {
-        fileHandler.loadFileCompetitionSwimmers();
+        fileHandler.loadFiles();
         menu.menuFull();
-        fileHandler.saveFileCompetitionSwimmers();
+        fileHandler.saveFiles();
     }
 
     public static void main(String[] args) {

@@ -123,4 +123,13 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             e.printStackTrace();
         }
     }
+
+    public void loadFiles(){
+        loadFileCompetitionSwimmers();
+        loadFileRecreationalSwimmers();
+    }
+    public void saveFiles(){
+        saveFileCompetitionSwimmers();
+        saveRecreationalSwimmers();
+    }
 }
