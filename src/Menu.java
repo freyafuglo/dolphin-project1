@@ -11,6 +11,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     FileHandler fileHandler = new FileHandler();
     MemberList memberList = new MemberList();
     TrainingResult trainingResult = new TrainingResult();
+    ViewMemberlist viewMemberlist = new ViewMemberlist();
 
 
 
@@ -76,8 +77,8 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     }
                     break;
                 case 3:
-                    ui.println("MEDLEMSLISTE");
-                    ui.println(memberList.getCompetitionSwimmers().toString());
+                    ui.println("MEDLEMSLISTE\n");
+                    viewMemberlist.viewMemberlist();
                     break;
                 case 4:
                     ui.println("HOLDLISTE");

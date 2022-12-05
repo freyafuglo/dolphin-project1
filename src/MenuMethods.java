@@ -130,14 +130,11 @@ public class MenuMethods extends Member {
             }
         }
 
-
-
     public void sortingBack() {
         Collections.sort(memberList.getBackStrokers(), sorterBack);
         ui.println("RYGSVØMMERE TOP FEM JUNIOR");
 
         // JUNIOR
-
         counter = 0;
 
             for (int i = 0; i < memberList.getBackStrokers().size(); i++) {
@@ -151,7 +148,6 @@ public class MenuMethods extends Member {
             }
 
         // SENIOR
-
         counter = 0;
 
         ui.println("RYGSVØMMERE TOP FEM SENIOR");
@@ -165,17 +161,12 @@ public class MenuMethods extends Member {
                     }
                 }
             }
-
-
-
-
     }
 
     public void sortingCrawl() {
         Collections.sort(memberList.getCrawlSwimmers(), sorterCrawl);
 
         // JUNIOR
-
         ui.println("CRAWLSVØMMERE TOP FEM JUNIOR");
 
         counter = 0;
@@ -192,7 +183,6 @@ public class MenuMethods extends Member {
             }
 
         // SENIOR
-
         counter = 0;
 
         ui.println("CRAWLSVØMMERE TOP FEM SENIOR");
@@ -208,12 +198,10 @@ public class MenuMethods extends Member {
             }
     }
 
-
     public void sortingButterfly() {
         Collections.sort(memberList.getButterFlyers(), sorterButterfly);
 
         // JUNIOR
-
         ui.println("BUTTERFLYSVØMMERE TOP FEM Junior");
 
         counter = 0;
@@ -230,7 +218,6 @@ public class MenuMethods extends Member {
 
 
         // SENIOR
-
         ui.println("BUTTERFLYSVØMMERE TOP FEM Senior");
 
         counter = 0;
