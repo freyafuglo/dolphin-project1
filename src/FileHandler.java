@@ -25,10 +25,10 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getAge() + ";");
                 p.print(c.getPhoneNumber() + ";");
                 p.print(c.getSwimDiscipline() + ";");
-                p.print(c.getSubscription()+";");
-                p.print(c.getBreastTrainingResult()+";");
-                p.print(c.getBackTrainingResult()+";");
-                p.print(c.getCrawlTrainingResult()+";");
+                p.print(c.getSubscription() + ";");
+                p.print(c.getBreastTrainingResult() + ";");
+                p.print(c.getBackTrainingResult() + ";");
+                p.print(c.getCrawlTrainingResult() + ";");
                 p.println(c.getButterflyTrainingResult());
             }
         p.close();
@@ -43,7 +43,9 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getID() + ";");
                 p.print(c.getName() + ";");
                 p.print(c.getAge() + ";");
-                p.println(c.getPhoneNumber());
+                p.print(c.getPhoneNumber() + ";");
+                p.println(c.getSubscription());
+
             }
             p.close();
         }catch(IOException e){
@@ -107,11 +109,14 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 String name = tokenScanner.next();
                 int age = Integer.parseInt(tokenScanner.next());
                 String phoneNumber = tokenScanner.next();
+                Subscription subscription = Subscription.valueOf(tokenScanner.next());
 
-                RecreationalSwimmer r = new RecreationalSwimmer(id, name, age, phoneNumber);
+                RecreationalSwimmer r = new RecreationalSwimmer(id, name, age, phoneNumber, subscription);
+                memberList.getRecreationalSwimmers().add(r);
 
             }
             fileScanner.close();
+
         }catch(IOException e){
             e.printStackTrace();
         }

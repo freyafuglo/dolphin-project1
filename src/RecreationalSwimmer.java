@@ -11,7 +11,7 @@ public class RecreationalSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
 
     }
 
-    public RecreationalSwimmer(String id, String name, int age, String phoneNumber) {
+    public RecreationalSwimmer(String id, String name, int age, String phoneNumber, Subscription subscription) {
 
     }
 }
