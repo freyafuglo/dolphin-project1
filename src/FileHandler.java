@@ -108,7 +108,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 int age = Integer.parseInt(tokenScanner.next());
                 String phoneNumber = tokenScanner.next();
 
-                CompetitionSwimmer recreationalSwimmers = new CompetitionSwimmer(id, name, age, phoneNumber);
+                RecreationalSwimmer r = new CompetitionSwimmer(id, name, age, phoneNumber);
 
             }
             fileScanner.close();
