@@ -6,7 +6,6 @@ public class MenuMethods extends Member {
     int counter = 0;
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
-    FileHandler fileHandler = new FileHandler();
 
     // SORTERING
     CompetitionSorterBreast sorterBreast = new CompetitionSorterBreast();

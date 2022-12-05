@@ -11,7 +11,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     FileHandler fileHandler = new FileHandler();
     MemberList memberList = new MemberList();
     TrainingResult trainingResult = new TrainingResult();
-    ViewMemberlist viewMemberlist = new ViewMemberlist();
+    MemberListHandler memberListHandler = new MemberListHandler();
 
 
 
@@ -69,16 +69,13 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     menuMethods.swimDiscipline();
                     break;
                 case 2:
-                    ui.println("REDIGER MEDLEM");
-                    //Bestem om aktiv eller passiv
-                    String aktivEllerPassiv = ui.readString("Tast ja for aktiv eller nej for passiv");
-
-                    if (aktivEllerPassiv.equals("ja")) {
-                    }
+                    //ui.println("REDIGER MEDLEM");
+                    ui.println("FJERN MEDLEM: \n");
+                    memberListHandler.deleteMember();
                     break;
                 case 3:
                     ui.println("MEDLEMSLISTE\n");
-                    viewMemberlist.viewMemberlist();
+                    memberListHandler.viewMemberlist();
                     break;
                 case 4:
                     ui.println("HOLDLISTE");
