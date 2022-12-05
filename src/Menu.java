@@ -74,7 +74,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     memberListHandler.deleteMember();
                     break;
                 case 3:
-                    ui.println("MEDLEMSLISTE\n");
+                    ui.println("MEDLEMSLISTE");
                     memberListHandler.viewMemberlist();
                     break;
                 case 4:
