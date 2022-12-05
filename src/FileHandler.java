@@ -12,6 +12,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
 
     // FIL INSTANTIERING
     File fileCompetitionSwimmers = new File("competitionSwimmers.txt");
+    File fileRecreationalSwimmers = new File("recreationalSwimmers.txt");
 
     // SAVE FILE METODE
     public void saveFileCompetitionSwimmers(){
@@ -33,6 +34,20 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
         p.close();
         } catch (IOException e){
             ui.println("I/O exception: " + e.getMessage());
+        }
+    }
+    public void saveRecreationalSwimmers(){
+        try{
+            PrintStream p = new PrintStream(new FileOutputStream(fileRecreationalSwimmers));
+            for (RecreationalSwimmer c : memberList.getRecreationalSwimmers()){
+                p.print(c.getID() + ";");
+                p.print(c.getName() + ";");
+                p.print(c.getAge() + ";");
+                p.println(c.getPhoneNumber());
+            }
+            p.close();
+        }catch(IOException e){
+            ui.println("I/O Exception: " + e);
         }
     }
 
@@ -77,6 +92,27 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
         fileScanner.close();
 
         } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void loadFileRecreationalSwimmers(){
+        memberList.getRecreationalSwimmers().clear();
+        try{
+            Scanner fileScanner = new Scanner(new File("recreationalSwimmers.txt"));
+            while(fileScanner.hasNext()){
+                Scanner tokenScanner = new Scanner(fileScanner.nextLine()).useDelimiter(";");
+
+                String id = tokenScanner.next();
+                String name = tokenScanner.next();
+                int age = Integer.parseInt(tokenScanner.next());
+                String phoneNumber = tokenScanner.next();
+
+                CompetitionSwimmer recreationalSwimmers = new CompetitionSwimmer(id, name, age, phoneNumber);
+
+            }
+            fileScanner.close();
+        }catch(IOException e){
             e.printStackTrace();
         }
     }
