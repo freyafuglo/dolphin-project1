@@ -19,6 +19,6 @@ public class MemberListHandler {
     public void deleteMember(){
         int indexOfChoice = ui.readInt("Hvilket medlem vil du have slettet [Indtast ID]?: ");
         memberList.getCompetitionSwimmers().remove(indexOfChoice);
-        ui.println("Medlem med ID: " + indexOfChoice + ", er blevet slettet.");
+        ui.println("Medlem med ID: [" + indexOfChoice + "], er blevet slettet.");
     }
 }
