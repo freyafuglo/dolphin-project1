@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private String name;
     private int age;
@@ -8,6 +6,17 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private static int idCounter;
     private String ID = "0000";
     private Subscription subscription;
+    private boolean inArrears;
+
+    public boolean isInArrears() {
+        return inArrears;
+    }
+
+    public void setInArrears(boolean inArrears) {
+        this.inArrears = inArrears;
+    }
+
+
 
     UserInterface ui = new UserInterface();
 
@@ -23,9 +32,11 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         isActive = true;
         setID();
         setSubscription();
+
     }
 
     public void isActive(boolean isActive) {
+
         this.isActive = isActive;
     }
 

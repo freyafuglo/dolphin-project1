@@ -19,13 +19,14 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     public CompetitionSwimmer(String id, String name, int age, String phoneNumber, String swimDiscipline,
                               Subscription subscription,
                               double breastTrainingResult, double backTrainingResult,
-                              double crawlTrainingResult, double butterflyTrainingResult) {
+                              double crawlTrainingResult, double butterflyTrainingResult, boolean isArrears) {
         super(name, age, phoneNumber);
         setSwimDiscipline(swimDiscipline);
         setBreastTrainingResult(breastTrainingResult);
         setBackTrainingResult(backTrainingResult);
         setCrawlTrainingResult(crawlTrainingResult);
         setButterflyTrainingResult(butterflyTrainingResult);
+        setInArrears(isArrears);
 
     }
 

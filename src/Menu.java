@@ -14,7 +14,6 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     MemberListHandler memberListHandler = new MemberListHandler();
 
 
-
     public Menu() {
 
     }
@@ -90,6 +89,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     break;
                 case 6:
                     ui.println("REGNSKAB");
+                    menuMethods.getInArrears();
                     break;
 
                 case 7:

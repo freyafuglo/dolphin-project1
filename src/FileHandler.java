@@ -29,7 +29,8 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getBreastTrainingResult() + ";");
                 p.print(c.getBackTrainingResult() + ";");
                 p.print(c.getCrawlTrainingResult() + ";");
-                p.println(c.getButterflyTrainingResult());
+                p.println(c.getButterflyTrainingResult()+";");
+                p.println(c.isInArrears());
             }
         p.close();
         } catch (IOException e){
@@ -71,9 +72,10 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             double back = Double.parseDouble(tokenScanner.next());
             double crawl = Double.parseDouble(tokenScanner.next());
             double butter = Double.parseDouble(tokenScanner.next());
+            boolean isArrears = Boolean.parseBoolean(tokenScanner.next());
 
             CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber,
-                    swimDiscipline, subscription,breast, back, crawl, butter );
+                    swimDiscipline, subscription,breast, back, crawl, butter, isArrears );
 
             memberList.getCompetitionSwimmers().add(c);
 

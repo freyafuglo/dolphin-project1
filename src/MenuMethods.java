@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class MenuMethods extends Member {
@@ -95,144 +96,94 @@ public class MenuMethods extends Member {
 
     public void sortingBreast() {
         Collections.sort(memberList.getBreastStrokers(), sorterBreast);
-
-        // JUNIOR
-        ui.println("BRYSTSVØMMERE TOP FEM JUNIOR");
-
-        counter = 0;
-
-            for (int i = 0; i < memberList.getBreastStrokers().size(); i++) {
-                if(memberList.getBreastStrokers().get(i).getSubscription() == Subscription.JUNIOR){
-                ui.printDouble(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
-                counter++;
-                if(counter == 5){
-                    i = memberList.getBreastStrokers().size();
-                    }
-                }
-            }
-
-
-        // SENIOR
-
-        ui.println("RYGSVØMMERE TOP FEM SENIOR");
-
-        counter = 0;
-
-            for (int i = 0; i < memberList.getBreastStrokers().size(); i++) {
-                if(memberList.getBreastStrokers().get(i).getSubscription() == Subscription.SENIOR){
-                    ui.printDouble(memberList.getBreastStrokers().get(i).getBreastTrainingResult());
-                    counter++;
-                    if(counter == 5){
-                        i = memberList.getBreastStrokers().size();
-                    }
-                }
-            }
-        }
+        sortingTop5(memberList.getBreastStrokers(), "breast");
+    }
 
     public void sortingBack() {
         Collections.sort(memberList.getBackStrokers(), sorterBack);
-        ui.println("RYGSVØMMERE TOP FEM JUNIOR");
-
-        // JUNIOR
-        counter = 0;
-
-            for (int i = 0; i < memberList.getBackStrokers().size(); i++) {
-                if(memberList.getBackStrokers().get(i).getSubscription() == Subscription.JUNIOR){
-                ui.printDouble(memberList.getBackStrokers().get(i).getBackTrainingResult());
-                counter++;
-                if(counter == 5){
-                      i = memberList.getBackStrokers().size();
-                    }
-                }
-            }
-
-        // SENIOR
-        counter = 0;
-
-        ui.println("RYGSVØMMERE TOP FEM SENIOR");
-
-            for (int i = 0; i < memberList.getBackStrokers().size(); i++) {
-                if(memberList.getBackStrokers().get(i).getSubscription() == Subscription.SENIOR){
-                    ui.printDouble(memberList.getBackStrokers().get(i).getBackTrainingResult());
-                    counter++;
-                    if(counter == 5){
-                        i = memberList.getBackStrokers().size();
-                    }
-                }
-            }
+        sortingTop5(memberList.getBackStrokers(), "back");
     }
 
     public void sortingCrawl() {
         Collections.sort(memberList.getCrawlSwimmers(), sorterCrawl);
-
-        // JUNIOR
-        ui.println("CRAWLSVØMMERE TOP FEM JUNIOR");
-
-        counter = 0;
-
-
-            for (int i = 0; i < memberList.getCrawlSwimmers().size(); i++) {
-                if (memberList.getCrawlSwimmers().get(i).getSubscription() == Subscription.JUNIOR) {
-                    ui.printDouble(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
-                    counter++;
-                    if (counter == 5) {
-                        i = memberList.getCrawlSwimmers().size();
-                    }
-                }
-            }
-
-        // SENIOR
-        counter = 0;
-
-        ui.println("CRAWLSVØMMERE TOP FEM SENIOR");
-
-            for (int i = 0; i < memberList.getCrawlSwimmers().size(); i++) {
-                if (memberList.getCrawlSwimmers().get(i).getSubscription() == Subscription.SENIOR) {
-                    ui.printDouble(memberList.getCrawlSwimmers().get(i).getCrawlTrainingResult());
-                    counter++;
-                    if (counter == 5) {
-                        i = memberList.getCrawlSwimmers().size();
-                    }
-                }
-            }
+        sortingTop5(memberList.getCrawlSwimmers(), "crawl");
     }
 
     public void sortingButterfly() {
         Collections.sort(memberList.getButterFlyers(), sorterButterfly);
+        sortingTop5(memberList.getButterFlyers(), "butterfly");
+    }
 
-        // JUNIOR
-        ui.println("BUTTERFLYSVØMMERE TOP FEM Junior");
 
+    public void sortingTop5(ArrayList<CompetitionSwimmer> swimmerArrayList, String discipline) {
+
+        ui.println(discipline + " TOP 5 Junior");
         counter = 0;
 
-            for (int j = 0; j < memberList.getButterFlyers().size(); j++) {
-                if (memberList.getButterFlyers().get(j).getSubscription() == Subscription.JUNIOR) {
-                    ui.printDouble(memberList.getButterFlyers().get(j).getButterflyTrainingResult());
-                    counter++;
-                    if (counter == 5) {
-                        j = memberList.getButterFlyers().size();
-                    }
+        for (int i = 0; i < swimmerArrayList.size(); i++) {
+
+            if (swimmerArrayList.get(i).getSubscription() == Subscription.JUNIOR) {
+
+                ui.println((counter + 1) + ". " + swimmerArrayList.get(i).getName() + ", " + swimmerArrayList.get(i).getID());
+                if (discipline.contains("butterfly")) {
+                    ui.println("\tResultat: " + memberList.getButterFlyers().get(i).getButterflyTrainingResult());
+                } else if (discipline.contains("crawl")) {
+                    ui.println("\tResultat: " + swimmerArrayList.get(i).getCrawlTrainingResult());
+                } else if (discipline.contains("back")) {
+                    ui.println("\tResultat: " + swimmerArrayList.get(i).getBackTrainingResult());
+                } else {
+                    ui.println("\tResultat: " + swimmerArrayList.get(i).getBreastTrainingResult());
+                }
+
+                counter++;
+                if (counter == 5) {
+                    i = swimmerArrayList.size();
                 }
             }
+        }
 
-
-        // SENIOR
-        ui.println("BUTTERFLYSVØMMERE TOP FEM Senior");
-
+        ui.println(discipline + " TOP 5 Senior");
         counter = 0;
 
-            for (int i = 0; i < memberList.getButterFlyers().size(); i++) {
-                if (memberList.getButterFlyers().get(i).getSubscription() == Subscription.SENIOR ||
-                        memberList.getButterFlyers().get(i).getSubscription() == Subscription.PENSIONIST) {
-                    ui.printDouble(memberList.getButterFlyers().get(i).getButterflyTrainingResult());
-                    counter++;
-                    if (counter == 5) {
-                        i = memberList.getButterFlyers().size();
-                    }
+        for (int i = 0; i < swimmerArrayList.size(); i++) {
+            if (swimmerArrayList.get(i).getSubscription() == Subscription.SENIOR ||
+                    swimmerArrayList.get(i).getSubscription() == Subscription.PENSIONIST) {
+                ui.println((counter + 1) + ". " + swimmerArrayList.get(i).getName() + ", " + swimmerArrayList.get(i).getID());
+                if (discipline.contains("butterfly")) {
+                    ui.println("\tResultat: " + swimmerArrayList.get(i).getButterflyTrainingResult());
+                } else if (discipline.contains("crawl")) {
+                    ui.println("\tResultat: " + swimmerArrayList.get(i).getCrawlTrainingResult());
+                } else if (discipline.contains("back")) {
+                    ui.println("\tResultat: " + swimmerArrayList.get(i).getBackTrainingResult());
+                } else {
+                    ui.println("\tResultat: " + swimmerArrayList.get(i).getBreastTrainingResult());
+                }
+                counter++;
+                if (counter == 5) {
+                    i = swimmerArrayList.size();
                 }
             }
+        }
+    }
+
+    public void getInArrears(){
+        ui.println("Medlemmer i restance: ");
+        System.out.printf("%s%13s%n", "ID", "NAVN");
+
+        for (int i = 0; i < memberList.getCompetitionSwimmers().size(); i++) {
+            if (memberList.getCompetitionSwimmers().get(i).isInArrears()) {
+                    System.out.printf("%-11s", "[" +memberList.getCompetitionSwimmers().get(i).getID() + "]");
+                    System.out.printf("%-30s%n", memberList.getCompetitionSwimmers().get(i).getName());
+                }
 
 
+            for (int j = 0; j < memberList.getRecreationalSwimmers().size(); j++) {
+                if (memberList.getRecreationalSwimmers().get(i).isInArrears()){
+                    System.out.printf("%-11s", "[" +memberList.getRecreationalSwimmers().get(i).getID() + "]");
+                    System.out.printf("%-30s%n", memberList.getRecreationalSwimmers().get(i).getName());
+                }
+            }
+        }
     }
 }
 
