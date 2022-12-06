@@ -149,7 +149,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 Double time = Double.parseDouble(tokenScanner.next());
 
                 CompetitionResult cr = new CompetitionResult(ID,name,competition,place,time);
-                cr.getCompetitionResults().add(cr);
+                memberList.getCompetitionResults().add(cr);
             }
             fileScanner.close();
 

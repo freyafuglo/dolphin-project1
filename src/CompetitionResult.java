@@ -8,7 +8,7 @@ public class CompetitionResult {
     private double time;
 
 
-    private static ArrayList<CompetitionResult> competitionResults = new ArrayList<>();
+
 
     CompetitionResult(){
 
@@ -60,12 +60,6 @@ public class CompetitionResult {
     public double getTime() {
         return time;
     }
-    public ArrayList<CompetitionResult> getCompetitionResults() {
-        return competitionResults;
-    }
 
-    public void setCompetitionResults(ArrayList<CompetitionResult> competitionResults) {
-        this.competitionResults = competitionResults;
-    }
 
 }

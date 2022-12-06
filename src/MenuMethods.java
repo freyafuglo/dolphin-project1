@@ -195,7 +195,15 @@ public class MenuMethods extends Member {
         }
     }
     public void printCompetitionResults(){
-        System.out.printf("%5s%5s%5s%5s%5s","ID","Navn","Stevne", "Placering", "Tid");
+        System.out.printf("%s %13s %30s %34s %30s %n","ID","Navn","Stevne", "Placering", "Tid");
+
+        for (CompetitionResult c: memberList.getCompetitionResults()) {
+            System.out.printf("%-12s",c.getID());
+            System.out.printf("%-29s",c.getName());
+            System.out.printf("%-32s",c.getCompetition());
+            System.out.printf("%-35s",c.getPlace());
+            System.out.printf("%-40s%n%n",c.getTime());
+        }
     }
 }
 

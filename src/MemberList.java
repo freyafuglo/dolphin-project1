@@ -13,6 +13,7 @@ public class MemberList { // EJERSKAB: ALEXANDER & FREYA & MATHIAS
     private static ArrayList<CompetitionSwimmer> breastStrokers = new ArrayList<>();
     private static ArrayList<CompetitionSwimmer> backStrokers = new ArrayList<>();
     private static ArrayList<RecreationalSwimmer> recreationalSwimmers = new ArrayList<>();
+    private static ArrayList<CompetitionResult> competitionResults = new ArrayList<>();
 
     // GETTERE
     public ArrayList<CompetitionSwimmer> getCompetitionSwimmers() {
@@ -37,6 +38,13 @@ public class MemberList { // EJERSKAB: ALEXANDER & FREYA & MATHIAS
     }
     public ArrayList<RecreationalSwimmer> getRecreationalSwimmers() {
         return recreationalSwimmers;
+    }
+
+    public ArrayList<CompetitionResult> getCompetitionResults() {
+        return competitionResults;
+    }
+    public void setCompetitionResults(ArrayList<CompetitionResult> competitionResults) {
+        this.competitionResults = competitionResults;
     }
 
 
