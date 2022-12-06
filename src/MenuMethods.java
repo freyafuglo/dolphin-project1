@@ -194,6 +194,9 @@ public class MenuMethods extends Member {
             }
         }
     }
+    public void printCompetitionResults(){
+        System.out.printf("%5s%5s%5s%5s%5s","ID","Navn","Stevne", "Placering", "Tid");
+    }
 }
 
 
