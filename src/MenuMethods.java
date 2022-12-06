@@ -8,6 +8,7 @@ public class MenuMethods extends Member {
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
     FileHandler fileHandler = new FileHandler();
+    TrainerList trainerList = new TrainerList();
 
     // SORTERING
     CompetitionSorterBreast sorterBreast = new CompetitionSorterBreast();
@@ -59,15 +60,22 @@ public class MenuMethods extends Member {
 
             if (swimDiscipline.contains("Brystsvømning")) {
                 memberList.getBreastStrokers().add(c);
+                c.setTrainer(trainerList.getTrainer1());
+                if(c.getSubscription() == Subscription.JUNIOR){
+                    c.setTrainer(trainerList.getTrainer3());
+                }
             }
             if (swimDiscipline.contains("Rygsvømning")) {
                 memberList.getBackStrokers().add(c);
+                c.setTrainer(trainerList.getTrainer2());
             }
             if (swimDiscipline.contains("Crawl")) {
                 memberList.getCrawlSwimmers().add(c);
+                c.setTrainer(trainerList.trainer3);
             }
             if (swimDiscipline.contains("Butterfly")) {
                 memberList.getButterFlyers().add(c);
+                c.setTrainer(trainerList.trainer4);
             }
             ui.println(c.getName() + "\n" + c.getAge() + "\n" +
                     c.getPhoneNumber() + "\n" + c.getSubscription() + "\n" + c.getID() + "\n" +

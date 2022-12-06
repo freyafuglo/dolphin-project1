@@ -8,6 +8,8 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     private double crawlTrainingResult;
     private double butterflyTrainingResult;
 
+    private Trainer trainer;
+
     public CompetitionSwimmer() {
     }
 
@@ -19,7 +21,8 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     public CompetitionSwimmer(String id, String name, int age, String phoneNumber, String swimDiscipline,
                               Subscription subscription,
                               double breastTrainingResult, double backTrainingResult,
-                              double crawlTrainingResult, double butterflyTrainingResult, boolean inArrears) {
+                              double crawlTrainingResult, double butterflyTrainingResult, boolean inArrears,
+                              Trainer trainer) {
         super(name, age, phoneNumber);
         setSwimDiscipline(swimDiscipline);
         setBreastTrainingResult(breastTrainingResult);
@@ -27,6 +30,7 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
         setCrawlTrainingResult(crawlTrainingResult);
         setButterflyTrainingResult(butterflyTrainingResult);
         setInArrears(inArrears);
+        setTrainer(trainer);
 
     }
 
@@ -51,6 +55,10 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
         return butterflyTrainingResult;
     }
 
+    public Trainer getTrainer(){
+        return trainer;
+    }
+
     // SETTERE
     public void setSwimDiscipline(String swimDiscipline) {
         this.swimDiscipline = swimDiscipline;
@@ -71,5 +79,10 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     public void setButterflyTrainingResult(double butterflyTrainingResult) {
         this.butterflyTrainingResult = butterflyTrainingResult;
     }
+
+    public void setTrainer(Trainer trainer){
+        this.trainer = trainer;
+    }
+
 }
 
