@@ -107,7 +107,6 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             Scanner fileScanner = new Scanner(new File("recreationalSwimmers.txt"));
             while(fileScanner.hasNext()){
                 Scanner tokenScanner = new Scanner(fileScanner.nextLine()).useDelimiter(";");
-
                 String id = tokenScanner.next();
                 String name = tokenScanner.next();
                 int age = Integer.parseInt(tokenScanner.next());
@@ -133,5 +132,27 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
     public void saveFiles(){
         saveFileCompetitionSwimmers();
         saveRecreationalSwimmers();
+    }
+    public void loadCompetitionResults(){
+        try {
+            Scanner fileScanner = new Scanner(new File("CompetitionResults.txt"));
+            while (fileScanner.hasNextLine()){
+                Scanner tokenScanner = new Scanner(fileScanner.nextLine()).useDelimiter(";");
+
+                String ID = tokenScanner.next();
+                String name = tokenScanner.next();
+                String competition = tokenScanner.next();
+                String place = tokenScanner.next();
+                Double time = Double.parseDouble(tokenScanner.next());
+
+                CompetitionResult cr = new CompetitionResult(ID,name,competition,place,time);
+                cr.getCompetitionResults().add(cr);
+            }
+            fileScanner.close();
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 }
