@@ -1,11 +1,11 @@
 
-public class TrainerList {
+public class TrainerList { // EJERSKAB DITTE OG FREYA
 
-        Trainer trainer1 = new Trainer("John");
-        Trainer trainer2 = new Trainer("Inga");
-        Trainer trainer3 = new Trainer("Kristina");
-        Trainer trainer4 = new Trainer("Lone");
-        Trainer trainer5 = new Trainer("Henrik");
+        Trainer trainer1 = new Trainer("John Jimmy Jørgensen");
+        Trainer trainer2 = new Trainer("Inga Katinka Fjeldfred");
+        Trainer trainer3 = new Trainer("Kristina Krystalglad");
+        Trainer trainer4 = new Trainer("Lone Lioness");
+        Trainer trainer5 = new Trainer("Henrik Marstaler Nu");
 
         // GETTERE
 

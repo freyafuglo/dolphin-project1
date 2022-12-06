@@ -68,14 +68,23 @@ public class MenuMethods extends Member {
             if (swimDiscipline.contains("Rygsvømning")) {
                 memberList.getBackStrokers().add(c);
                 c.setTrainer(trainerList.getTrainer2());
+                if(c.getSubscription() == Subscription.JUNIOR){
+                    c.setTrainer(trainerList.getTrainer3());
+                }
             }
             if (swimDiscipline.contains("Crawl")) {
                 memberList.getCrawlSwimmers().add(c);
                 c.setTrainer(trainerList.trainer3);
+                if(c.getSubscription() == Subscription.JUNIOR){
+                    c.setTrainer(trainerList.getTrainer3());
+                }
             }
             if (swimDiscipline.contains("Butterfly")) {
                 memberList.getButterFlyers().add(c);
                 c.setTrainer(trainerList.trainer4);
+                if(c.getSubscription() == Subscription.JUNIOR){
+                    c.setTrainer(trainerList.getTrainer3());
+                }
             }
             ui.println(c.getName() + "\n" + c.getAge() + "\n" +
                     c.getPhoneNumber() + "\n" + c.getSubscription() + "\n" + c.getID() + "\n" +

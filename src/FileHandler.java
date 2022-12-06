@@ -79,7 +79,7 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             Trainer trainer = new Trainer(trainerName);
 
             CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber,
-                    swimDiscipline, subscription,breast, back, crawl, butter, inArrears, trainer);
+                    swimDiscipline, subscription, breast, back, crawl, butter, inArrears, trainer);
 
             memberList.getCompetitionSwimmers().add(c);
 
