@@ -98,6 +98,8 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     break;
 
                 case 9:
+                    fileHandler.loadCompetitionResults();
+                    menuMethods.printCompetitionResults();
                     ui.println("Farvel og tak!");
                     done = true;
                     break;

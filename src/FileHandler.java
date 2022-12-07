@@ -30,7 +30,8 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
                 p.print(c.getBackTrainingResult() + ";");
                 p.print(c.getCrawlTrainingResult() + ";");
                 p.print(c.getButterflyTrainingResult()+";");
-                p.println(c.isInArrears());
+                p.print(c.isInArrears()+";");
+                p.println(c.getTrainer());
             }
         p.close();
         } catch (IOException e){
@@ -74,9 +75,11 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             double crawl = Double.parseDouble(tokenScanner.next());
             double butter = Double.parseDouble(tokenScanner.next());
             boolean inArrears = Boolean.parseBoolean(tokenScanner.next());
+            String trainerName = tokenScanner.next();
+            Trainer trainer = new Trainer(trainerName);
 
             CompetitionSwimmer c = new CompetitionSwimmer(id, name, age, phoneNumber,
-                    swimDiscipline, subscription,breast, back, crawl, butter, inArrears );
+                    swimDiscipline, subscription, breast, back, crawl, butter, inArrears, trainer);
 
             memberList.getCompetitionSwimmers().add(c);
 
@@ -107,7 +110,6 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
             Scanner fileScanner = new Scanner(new File("recreationalSwimmers.txt"));
             while(fileScanner.hasNext()){
                 Scanner tokenScanner = new Scanner(fileScanner.nextLine()).useDelimiter(";");
-
                 String id = tokenScanner.next();
                 String name = tokenScanner.next();
                 int age = Integer.parseInt(tokenScanner.next());
@@ -133,5 +135,27 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
     public void saveFiles(){
         saveFileCompetitionSwimmers();
         saveRecreationalSwimmers();
+    }
+    public void loadCompetitionResults(){
+        try {
+            Scanner fileScanner = new Scanner(new File("CompetitionResults.txt"));
+            while (fileScanner.hasNextLine()){
+                Scanner tokenScanner = new Scanner(fileScanner.nextLine()).useDelimiter(";");
+
+                String ID = tokenScanner.next();
+                String name = tokenScanner.next();
+                String competition = tokenScanner.next();
+                String place = tokenScanner.next();
+                Double time = Double.parseDouble(tokenScanner.next());
+
+                CompetitionResult cr = new CompetitionResult(ID,name,competition,place,time);
+                memberList.getCompetitionResults().add(cr);
+            }
+            fileScanner.close();
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 }

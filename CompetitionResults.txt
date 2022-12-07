@@ -1,0 +1,10 @@
+0020;Alex;rema1000cup;1.;10.02
+0019;Frixol;rema1000cup;5.;10.02
+0015;Fritto;rema1000cup;7.;10.02
+0017;Frixala;rema1000cup;3.;10.02
+0013;Frå;rema1000cup;10.;10.02
+0004;Frø;storerobertopen;35.;55.45
+0003;Konrad;storerobertopen;35.;55.45
+0012;Fremming;storerobertopen;35.;55.45
+0001;Connie;storerobertopen;35.;55.45
+0002;Bjarne;storerobertopen;35.;55.45

@@ -4,7 +4,7 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private String phoneNumber;
     private boolean isActive;
     private static int idCounter;
-    private String ID = "0000";
+    private String ID = null;
     private Subscription subscription;
     private boolean inArrears;
 
