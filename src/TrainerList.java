@@ -1,6 +1,7 @@
 
 public class TrainerList { // EJERSKAB DITTE OG FREYA
 
+        // LISTE MED TRÆNERE
         Trainer trainer1 = new Trainer("John Jimmy Jørgensen");
         Trainer trainer2 = new Trainer("Inga Katinka Fjeldfred");
         Trainer trainer3 = new Trainer("Kristina Krystalglad");
