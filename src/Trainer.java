@@ -6,25 +6,19 @@ public class Trainer { // EJERSKAB DITTE OG FREYA
 
     // KONSTRUKTØR
 
-    public Trainer(String trainerName){
+    public Trainer(String trainerName) {
         setTrainerName(trainerName);
     }
 
     // SETTERE
 
-    public void setTrainerName(String trainerName){
+    public void setTrainerName(String trainerName) {
         this.trainerName = trainerName;
     }
 
-public String toString()
-{
-    return trainerName;
-}
-
-
-
-
-
+    public String toString() {
+        return trainerName;
+    }
 
 
 }
