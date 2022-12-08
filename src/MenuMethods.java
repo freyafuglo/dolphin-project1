@@ -14,86 +14,93 @@ public class MenuMethods extends Member {
     CompetitionSorterCrawl sorterCrawl = new CompetitionSorterCrawl();
     CompetitionSorterButterfly sorterButterfly = new CompetitionSorterButterfly();
 
-    // EJERSKAB FREYA, DITTE, MATHIAS
+    // EJERSKAB FREYA, DITTE, MATHIAS, ALEXANDER
     public void addMember() {
+
+        boolean done = false;
+        boolean keepGoing = true;
+
         setName(ui.readString("Indtast navn: "));
         setAge(ui.readInt("Indtast alder: "));
         ui.scannerBug();
         setPhoneNumber(ui.readString("Indtast telefonnummer: "));
-        teamOrNot = ui.readString("Skal medlemmet træne på hold? ");
-    }
 
-    // EJERSKAB ALEXANDER & FREYA
-    public void decideSwimDiscipline() {
+        do {
+            teamOrNot = ui.readString("Skal medlemmet træne på hold? ");
 
-        boolean done = false;
+            if (teamOrNot.equalsIgnoreCase("ja")) {
 
-        if (teamOrNot.equalsIgnoreCase("ja")) {
+                keepGoing = false;
 
-            String swimDiscipline = "";
-            Menu menuDiscipline = new Menu("SVØMMEDISCIPLINER", "Vælg svømmediscipliner",
-                    new String[]{
-                            "1. Brystsvømning",
-                            "2. Rygsvømning",
-                            "3. Crawl",
-                            "4. Butterfly",
-                            "5. Ikke flere"
-                    });
-            menuDiscipline.printMenu();
+                String swimDiscipline = "";
+                Menu menuDiscipline = new Menu("SVØMMEDISCIPLINER", "Vælg svømmediscipliner",
+                        new String[]{
+                                "1. Brystsvømning",
+                                "2. Rygsvømning",
+                                "3. Crawl",
+                                "4. Butterfly",
+                                "5. Ikke flere"
+                        });
+                menuDiscipline.printMenu();
 
-            do {
-                switch (menuDiscipline.readChoice()) {
-                    case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning-");
-                    case 2 -> swimDiscipline = swimDiscipline.concat("Rygsvømning-");
-                    case 3 -> swimDiscipline = swimDiscipline.concat("Crawl-");
-                    case 4 -> swimDiscipline = swimDiscipline.concat("Butterfly-");
-                    case 5 -> done = true;
+                do {
+                    switch (menuDiscipline.readChoice()) {
+                        case 1 -> swimDiscipline = swimDiscipline.concat("Brystsvømning-");
+                        case 2 -> swimDiscipline = swimDiscipline.concat("Rygsvømning-");
+                        case 3 -> swimDiscipline = swimDiscipline.concat("Crawl-");
+                        case 4 -> swimDiscipline = swimDiscipline.concat("Butterfly-");
+                        case 5 -> done = true;
+                    }
                 }
-            }
-            while (!done);
+                while (!done);
 
-            CompetitionSwimmer c = new CompetitionSwimmer(getName(), getAge(), getPhoneNumber(), swimDiscipline);
-            memberList.getCompetitionSwimmers().add(c);
+                CompetitionSwimmer c = new CompetitionSwimmer(getName(), getAge(), getPhoneNumber(), swimDiscipline);
+                memberList.getCompetitionSwimmers().add(c);
 
-            if (swimDiscipline.contains("Brystsvømning")) {
-                memberList.getBreastStrokers().add(c);
-                c.setTrainer(trainerList.getTrainer1());
-                if(c.getSubscription() == Subscription.JUNIOR){
-                    c.setTrainer(trainerList.getTrainer3());
+                if (swimDiscipline.contains("Brystsvømning")) {
+                    memberList.getBreastStrokers().add(c);
+                    c.setTrainer(trainerList.getTrainer1());
+                    if (c.getSubscription() == Subscription.JUNIOR) {
+                        c.setTrainer(trainerList.getTrainer3());
+                    }
                 }
-            }
-            if (swimDiscipline.contains("Rygsvømning")) {
-                memberList.getBackStrokers().add(c);
-                c.setTrainer(trainerList.getTrainer2());
-                if(c.getSubscription() == Subscription.JUNIOR){
-                    c.setTrainer(trainerList.getTrainer3());
+                if (swimDiscipline.contains("Rygsvømning")) {
+                    memberList.getBackStrokers().add(c);
+                    c.setTrainer(trainerList.getTrainer2());
+                    if (c.getSubscription() == Subscription.JUNIOR) {
+                        c.setTrainer(trainerList.getTrainer3());
+                    }
                 }
-            }
-            if (swimDiscipline.contains("Crawl")) {
-                memberList.getCrawlSwimmers().add(c);
-                c.setTrainer(trainerList.trainer3);
-                if(c.getSubscription() == Subscription.JUNIOR){
-                    c.setTrainer(trainerList.getTrainer3());
+                if (swimDiscipline.contains("Crawl")) {
+                    memberList.getCrawlSwimmers().add(c);
+                    c.setTrainer(trainerList.trainer3);
+                    if (c.getSubscription() == Subscription.JUNIOR) {
+                        c.setTrainer(trainerList.getTrainer3());
+                    }
                 }
-            }
-            if (swimDiscipline.contains("Butterfly")) {
-                memberList.getButterFlyers().add(c);
-                c.setTrainer(trainerList.trainer4);
-                if(c.getSubscription() == Subscription.JUNIOR){
-                    c.setTrainer(trainerList.getTrainer3());
+                if (swimDiscipline.contains("Butterfly")) {
+                    memberList.getButterFlyers().add(c);
+                    c.setTrainer(trainerList.trainer4);
+                    if (c.getSubscription() == Subscription.JUNIOR) {
+                        c.setTrainer(trainerList.getTrainer3());
+                    }
                 }
-            }
-            ui.println(c.getName() + "\n" + c.getAge() + "\n" +
-                    c.getPhoneNumber() + "\n" + c.getSubscription() + "\n" + c.getID() + "\n" +
-                    c.getSwimDiscipline());
-        } else {
-            RecreationalSwimmer r = new RecreationalSwimmer(getName(), getAge(), getPhoneNumber());
-            memberList.getRecreationalSwimmers().add(r);
-            ui.println(r.getName() + "\n" + r.getAge() + "\n" +
-                    r.getPhoneNumber() + "\n" + r.getSubscription() + "\n" + r.getID());
+                ui.println(c.getName() + "\n" + c.getAge() + "\n" +
+                        c.getPhoneNumber() + "\n" + c.getSubscription() + "\n" + c.getID() + "\n" +
+                        c.getSwimDiscipline());
+            } else if (teamOrNot.equalsIgnoreCase("nej")) {
+                keepGoing = false;
+                RecreationalSwimmer r = new RecreationalSwimmer(getName(), getAge(), getPhoneNumber());
+                memberList.getRecreationalSwimmers().add(r);
+                ui.println(r.getName() + "\n" + r.getAge() + "\n" +
+                        r.getPhoneNumber() + "\n" + r.getSubscription() + "\n" + r.getID());
 
-            System.out.println(memberList.getRecreationalSwimmers().get(0));
-        }
+                System.out.println(memberList.getRecreationalSwimmers().get(0));
+            } else {
+                ui.println("Skriv enten ja eller nej");
+            }
+
+        } while (keepGoing);
     }
 
     // EJERSKAB ALEXANDER & MATHIAS
@@ -198,15 +205,16 @@ public class MenuMethods extends Member {
             }
         }
     }
-    public void printCompetitionResults(){
-        System.out.printf("%s %13s %30s %34s %30s %n","ID","Navn","Stevne", "Placering", "Tid");
 
-        for (CompetitionResult c: memberList.getCompetitionResults()) {
-            System.out.printf("%-12s",c.getID());
-            System.out.printf("%-29s",c.getName());
-            System.out.printf("%-32s",c.getCompetition());
-            System.out.printf("%-35s",c.getPlace());
-            System.out.printf("%-40s%n%n",c.getTime());
+    public void printCompetitionResults() {
+        System.out.printf("%s %13s %30s %34s %30s %n", "ID", "Navn", "Stevne", "Placering", "Tid");
+
+        for (CompetitionResult c : memberList.getCompetitionResults()) {
+            System.out.printf("%-12s", c.getID());
+            System.out.printf("%-29s", c.getName());
+            System.out.printf("%-32s", c.getCompetition());
+            System.out.printf("%-35s", c.getPlace());
+            System.out.printf("%-40s%n%n", c.getTime());
         }
     }
 

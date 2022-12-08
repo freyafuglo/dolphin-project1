@@ -1,4 +1,4 @@
-0001;Mathias;32;29382134;Crawl-Butterfly-;SENIOR;0.0;0.0;30.64;32.32;false;Lone Lioness
+0001;Mathias;32;29382134;Crawl-Butterfly-;SENIOR;150.0;0.0;30.64;32.32;false;Lone Lioness
 0003;Carlo;18;23452167;Brystsvømning-;SENIOR;0.0;0.0;0.0;0.0;false;John Jimmy Jørgensen
 0004;Frida Sophia;13;23765490;Brystsvømning-Rygsvømning-;JUNIOR;34.45;34.22;0.0;0.0;false;Inga
 0005;Storm;17;24137689;Brystsvømning-Crawl-;JUNIOR;0.0;0.0;0.0;0.0;false;Kristina Krystalglad

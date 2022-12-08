@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class UserInterface { // EJERSKAB: MATHIAS & CO
@@ -21,8 +22,17 @@ public class UserInterface { // EJERSKAB: MATHIAS & CO
     }
 
     public int readInt() {
-
-        return in.nextInt();
+        int intIn = 0;
+        boolean done = false;
+        do {
+            try {
+                intIn = Integer.parseInt(in.next());
+                done = true;
+            } catch (NumberFormatException e) {
+                    System.out.println("Du skal skrive et tal (fx. 23)");
+                }
+        } while (!done);
+        return intIn;
     }
 
     public int readInt(String msg) {
@@ -31,11 +41,21 @@ public class UserInterface { // EJERSKAB: MATHIAS & CO
     }
 
     public double readDouble() {
-        return in.nextDouble();
+        double doubleIn = 0;
+        boolean done=false;
+        do{
+            try{
+                doubleIn = Double.parseDouble(in. next());
+                done=true;
+            } catch (NumberFormatException e){
+                System.out.println("Skriv et tal (fx. 56.88)");
+            }
+        } while (!done);
+        return doubleIn;
     }
 
-    public double readDouble(String msg){
+    public double readDouble(String msg) {
         println(msg);
-       return readDouble();
+        return readDouble();
     }
 }
