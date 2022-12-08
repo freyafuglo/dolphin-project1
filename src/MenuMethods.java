@@ -24,7 +24,7 @@ public class MenuMethods extends Member {
     }
 
     // EJERSKAB ALEXANDER & FREYA
-    public void swimDiscipline() {
+    public void decideSwimDiscipline() {
 
         boolean done = false;
 
@@ -88,10 +88,10 @@ public class MenuMethods extends Member {
                     c.getSwimDiscipline());
         } else {
             RecreationalSwimmer r = new RecreationalSwimmer(getName(), getAge(), getPhoneNumber());
+            memberList.getRecreationalSwimmers().add(r);
             ui.println(r.getName() + "\n" + r.getAge() + "\n" +
                     r.getPhoneNumber() + "\n" + r.getSubscription() + "\n" + r.getID());
 
-            memberList.getRecreationalSwimmers().add(r);
             System.out.println(memberList.getRecreationalSwimmers().get(0));
         }
     }
@@ -209,6 +209,7 @@ public class MenuMethods extends Member {
             System.out.printf("%-40s%n%n",c.getTime());
         }
     }
+
 }
 
 

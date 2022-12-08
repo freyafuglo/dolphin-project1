@@ -28,7 +28,7 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         setAge(age);
         setPhoneNumber(phoneNumber);
         isActive = true;
-        setID();
+        setID(id);
         setSubscription();
 
     }
@@ -43,13 +43,9 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         this.age = age;
     }
 
-    public void setID() {
-        //ID = "0000";
+    public void setID(String id) {
         idCounter++;
         ID = String.format("%04d", idCounter);
-        //Alexanders alt for lange metode :´(
-        //ID = ID.substring(String.valueOf(idCounter).length());
-        //ID = ID.concat(String.valueOf(idCounter));
     }
 
     public void setName(String name) {
@@ -80,23 +76,18 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     public Subscription getSubscription() {
         return subscription;
     }
-
     public int getAge() {
         return age;
     }
-
     public String getName() {
         return name;
     }
-
     public String getID() {
         return ID;
     }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
     public boolean isActive() {
         return this.isActive;
     }
