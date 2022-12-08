@@ -65,7 +65,7 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                 case 1:
                     ui.println("TILFØJ NYT MEDLEM");
                     menuMethods.addMember();
-                    menuMethods.swimDiscipline();
+                    menuMethods.decideSwimDiscipline();
                     break;
                 case 2:
                     //ui.println("REDIGER MEDLEM");
