@@ -1,18 +1,9 @@
 import java.util.Scanner;
 
 public class UserInterface { // EJERSKAB: MATHIAS & CO
-
     Scanner in = new Scanner(System.in);
 
-    public void print(String msg) {
-        System.out.print(msg);
-    }
-
     public void println(String msg) {
-        System.out.println(msg);
-    }
-
-    public void printDouble(double msg) {
         System.out.println(msg);
     }
 

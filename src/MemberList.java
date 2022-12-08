@@ -25,7 +25,6 @@ public class MemberList { // EJERSKAB: ALEXANDER & FREYA & MATHIAS
     }
 
     public ArrayList<CompetitionSwimmer> getButterFlyers() {
-
         return butterFlyers;
     }
 

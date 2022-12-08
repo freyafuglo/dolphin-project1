@@ -1,15 +1,12 @@
 public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     private String swimDiscipline;
-
     private double backTrainingResult;
     private double breastTrainingResult;
     private double crawlTrainingResult;
     private double butterflyTrainingResult;
-
     private Trainer trainer;
 
-    public CompetitionSwimmer() {
-    }
+    // KONSTRUKTØRER
 
     public CompetitionSwimmer(String name, int age, String phoneNumber, String swimDiscipline) {
         super(name, age, phoneNumber);

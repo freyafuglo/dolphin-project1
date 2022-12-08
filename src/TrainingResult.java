@@ -1,10 +1,6 @@
 public class TrainingResult {
-
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
-
-
-
 
     public void enterTrainingResult() {
         String findID = ui.readString("Indtast medlems ID: ");
@@ -15,8 +11,7 @@ public class TrainingResult {
                 ui.println("Bruger ID:" + c.getID());
 
             boolean done = false;
-            String swimDiscipline = "";
-            Menu menuDiscipline = new Menu("SVØMMEDISCIPLINER", "Vælg svømmedisciplin",
+                Menu menuDiscipline = new Menu("SVØMMEDISCIPLINER", "Vælg svømmedisciplin",
                     new String[]{
                             "1. Brystsvømning",
                             "2. Rygsvømning",
@@ -24,7 +19,6 @@ public class TrainingResult {
                             "4. Butterfly",
                             "5. Ikke flere"
                     });
-
 
             do {
                 menuDiscipline.printMenu();

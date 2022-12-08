@@ -14,7 +14,6 @@ public class MenuMethods extends Member {
     CompetitionSorterCrawl sorterCrawl = new CompetitionSorterCrawl();
     CompetitionSorterButterfly sorterButterfly = new CompetitionSorterButterfly();
 
-
     // EJERSKAB FREYA, DITTE, MATHIAS
     public void addMember() {
         setName(ui.readString("Indtast navn: "));
@@ -26,6 +25,7 @@ public class MenuMethods extends Member {
 
     // EJERSKAB ALEXANDER & FREYA
     public void decideSwimDiscipline() {
+
         boolean done = false;
 
         if (teamOrNot.equalsIgnoreCase("ja")) {
@@ -54,7 +54,6 @@ public class MenuMethods extends Member {
 
             CompetitionSwimmer c = new CompetitionSwimmer(getName(), getAge(), getPhoneNumber(), swimDiscipline);
             memberList.getCompetitionSwimmers().add(c);
-
 
             if (swimDiscipline.contains("Brystsvømning")) {
                 memberList.getBreastStrokers().add(c);
@@ -90,7 +89,6 @@ public class MenuMethods extends Member {
         } else {
             RecreationalSwimmer r = new RecreationalSwimmer(getName(), getAge(), getPhoneNumber());
             memberList.getRecreationalSwimmers().add(r);
-
             ui.println(r.getName() + "\n" + r.getAge() + "\n" +
                     r.getPhoneNumber() + "\n" + r.getSubscription() + "\n" + r.getID());
 
@@ -109,7 +107,6 @@ public class MenuMethods extends Member {
     }
 
     // SORTERINGSMETODER // EJERSKAB DITTE & FREYA
-
 
     public void sortingBreast() {
         Collections.sort(memberList.getBreastStrokers(), sorterBreast);
@@ -130,7 +127,6 @@ public class MenuMethods extends Member {
         Collections.sort(memberList.getButterFlyers(), sorterButterfly);
         sortingTop5(memberList.getButterFlyers(), "butterfly");
     }
-
 
     public void sortingTop5(ArrayList<CompetitionSwimmer> swimmerArrayList, String discipline) {
 
@@ -183,6 +179,7 @@ public class MenuMethods extends Member {
         }
     }
 
+    // EJERSKAB ALEXANDER & MATHIAS
     public void getInArrears() {
         ui.println("Medlemmer i restance: ");
         System.out.printf("%s%13s%n", "ID", "NAVN");
@@ -194,7 +191,6 @@ public class MenuMethods extends Member {
             }
         }
 
-
         for (int i = 0; i < memberList.getRecreationalSwimmers().size(); i++) {
             if (memberList.getRecreationalSwimmers().get(i).isInArrears()) {
                 System.out.printf("%-11s", "[" + memberList.getRecreationalSwimmers().get(i).getID() + "]");
@@ -203,16 +199,17 @@ public class MenuMethods extends Member {
         }
     }
     public void printCompetitionResults(){
-        System.out.printf("%s %13s %30s %22s %13s %n","ID","Navn","Stevne", "Placering", "Tid");
+        System.out.printf("%s %13s %30s %34s %30s %n","ID","Navn","Stevne", "Placering", "Tid");
 
         for (CompetitionResult c: memberList.getCompetitionResults()) {
             System.out.printf("%-12s",c.getID());
             System.out.printf("%-29s",c.getName());
-            System.out.printf("%-20s",c.getCompetition());
-            System.out.printf("%-20s",c.getPlace());
+            System.out.printf("%-32s",c.getCompetition());
+            System.out.printf("%-35s",c.getPlace());
             System.out.printf("%-40s%n%n",c.getTime());
         }
     }
+
 }
 
 

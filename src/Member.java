@@ -8,8 +8,6 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
     private Subscription subscription;
     private boolean inArrears;
 
-    MemberList memberList = new MemberList();
-
     public boolean isInArrears() {
         return inArrears;
     }
@@ -18,10 +16,10 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         this.inArrears = inArrears;
     }
 
-
     UserInterface ui = new UserInterface();
 
-    public Member() {
+    // KONSTRUKTØRER
+    public Member(){
 
     }
 
@@ -30,14 +28,14 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         setAge(age);
         setPhoneNumber(phoneNumber);
         isActive = true;
-        createID();
+        setID(id);
         setSubscription();
 
     }
-
     public void isActive(boolean isActive) {
 
         this.isActive = isActive;
+
     }
 
     // SETTERE
@@ -45,73 +43,52 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         this.age = age;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setID(String id) {
+        idCounter++;
+        ID = String.format("%04d", idCounter);
     }
 
-    public void createID() {
-        int idSum = 0;
-        if (memberList.getRecreationalSwimmers().size() > 0 || memberList.getCompetitionSwimmers().size() > 0) {
-            for (CompetitionSwimmer c : memberList.getCompetitionSwimmers()) {
-                if (Integer.parseInt(c.getID()) > idSum) {
-                    idSum = Integer.parseInt(c.getID());
-                }}
-                for (RecreationalSwimmer r : memberList.getRecreationalSwimmers()) {
-                    if (Integer.parseInt(r.getID()) > idSum) {
-                        idSum = Integer.parseInt(r.getID());
-                    }
-                } idCounter = idSum;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setSubscription() {
+        if (isActive) {
+            if (age < 18) {
+                this.subscription = Subscription.JUNIOR;
             }
-            idCounter++;
-            ID = String.format("%04d", idCounter);
-
+            else if (age < 60) {
+                this.subscription = Subscription.SENIOR;
+            }
+            else {
+                this.subscription = Subscription.PENSIONIST;
+            }
         }
-
-        public void setName (String name){
-            this.name = name;
-        }
-
-        public void setPhoneNumber (String phoneNumber){
-            this.phoneNumber = phoneNumber;
-        }
-
-        public void setSubscription () {
-            if (isActive) {
-                if (age < 18) {
-                    this.subscription = Subscription.JUNIOR;
-                } else if (age < 60) {
-                    this.subscription = Subscription.SENIOR;
-                } else {
-                    this.subscription = Subscription.PENSIONIST;
-                }
-            } else
-                this.subscription = Subscription.PASSIV;
-        }
-
-        // GETTERE
-        public Subscription getSubscription () {
-            return subscription;
-        }
-
-        public int getAge () {
-            return age;
-        }
-
-        public String getName () {
-            return name;
-        }
-
-        public String getID () {
-            return ID;
-        }
-
-        public String getPhoneNumber () {
-            return phoneNumber;
-        }
-
-        public boolean isActive () {
-            return this.isActive;
-        }
+        else
+            this.subscription = Subscription.PASSIV;
     }
 
-
+    // GETTERE
+    public Subscription getSubscription() {
+        return subscription;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getID() {
+        return ID;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public boolean isActive() {
+        return this.isActive;
+    }
+}

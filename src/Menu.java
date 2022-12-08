@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Menu { // EJERSKAB: DITTE & MATHIAS
-
     private String menuHeader;
     private String leadText;
     private String[] menuItems;
@@ -9,14 +8,8 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
     UserInterface ui = new UserInterface();
     MenuMethods menuMethods = new MenuMethods();
     FileHandler fileHandler = new FileHandler();
-    MemberList memberList = new MemberList();
     TrainingResult trainingResult = new TrainingResult();
     MemberListHandler memberListHandler = new MemberListHandler();
-
-
-    public Menu() {
-
-    }
 
     public Menu(String menuHeader, String leadText, String[] menuItems) {
         this.menuHeader = menuHeader;
@@ -68,7 +61,6 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     menuMethods.decideSwimDiscipline();
                     break;
                 case 2:
-                    //ui.println("REDIGER MEDLEM");
                     ui.println("FJERN MEDLEM: \n");
                     memberListHandler.deleteMember();
                     break;
@@ -97,9 +89,13 @@ public class Menu { // EJERSKAB: DITTE & MATHIAS
                     trainingResult.enterTrainingResult();
                     break;
 
-                case 9:
+                case 8:
+                    ui.println("STÆVNERESULTATER");
                     fileHandler.loadCompetitionResults();
                     menuMethods.printCompetitionResults();
+                    break;
+
+                case 9:
                     ui.println("Farvel og tak!");
                     done = true;
                     break;

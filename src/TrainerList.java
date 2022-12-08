@@ -9,7 +9,6 @@ public class TrainerList { // EJERSKAB DITTE OG FREYA
         Trainer trainer5 = new Trainer("Henrik Marstaler Nu");
 
         // GETTERE
-
         public Trainer getTrainer1(){
                 return trainer1;
         }
@@ -25,7 +24,6 @@ public class TrainerList { // EJERSKAB DITTE OG FREYA
         public Trainer getTrainer4() {
                 return trainer4;
         }
-
         public Trainer getTrainer5() {
                 return trainer5;
         }
