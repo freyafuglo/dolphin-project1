@@ -25,12 +25,28 @@ public class MemberListHandler { // EJERSKAB MATHIAS & ALEXANDER
     }
 
     public void deleteMember() {
+        boolean compID = false;
+        boolean recID = false;
+
         String idOfChoice = ui.readString("Hvilket medlem vil du have slettet [Indtast ID]?: ");
         for (int i = 0; i < memberList.getCompetitionSwimmers().size(); i++) {
             if (memberList.getCompetitionSwimmers().get(i).getID().equals(idOfChoice)) {
                 memberList.getCompetitionSwimmers().remove(i);
+                ui.println("Medlem med ID: [" + idOfChoice + "], er blevet slettet.");
+                i = memberList.getCompetitionSwimmers().size();
+                compID = true;
             }
         }
-        ui.println("Medlem med ID: [" + idOfChoice + "], er blevet slettet.");
+        for (int i = 0; i < memberList.getRecreationalSwimmers().size(); i++) {
+            if (memberList.getRecreationalSwimmers().get(i).getID().equals(idOfChoice)) {
+                memberList.getRecreationalSwimmers().remove(i);
+                ui.println("Medlem med ID: [" + idOfChoice + "], er blevet slettet.");
+                i = memberList.getRecreationalSwimmers().size();
+                recID = true;
+            }
+        }
+        if (!recID && !compID) {
+            ui.println("ID findes ikke!");
+        }
     }
 }

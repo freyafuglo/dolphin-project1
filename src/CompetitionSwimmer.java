@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     private String swimDiscipline;
     private double backTrainingResult;
@@ -28,6 +26,7 @@ public class CompetitionSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
         setButterflyTrainingResult(butterflyTrainingResult);
         setInArrears(inArrears);
         setTrainer(trainer);
+        setID(id);
 
     }
 

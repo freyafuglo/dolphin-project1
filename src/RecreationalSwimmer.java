@@ -10,5 +10,6 @@ public class RecreationalSwimmer extends Member { // EJERSKAB: ALEXANDER & FREYA
     public RecreationalSwimmer(String id, String name, int age, String phoneNumber, Subscription subscription, boolean inArrears) {
         super(name, age, phoneNumber);
         setInArrears(inArrears);
+        setID(id);
     }
 }
