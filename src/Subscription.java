@@ -1,5 +1,4 @@
 public enum Subscription { // EJERSKAB: DITTE & MATHIAS
-
     JUNIOR(1000),
     SENIOR(1600),
     PENSIONIST(SENIOR.getSubscriptionPrice() * 0.75),

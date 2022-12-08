@@ -83,7 +83,6 @@ public class FileHandler { // EJERSKAB: MATHIAS & DITTE
 
             memberList.getCompetitionSwimmers().add(c);
 
-            //problem 2 løst
             if (swimDiscipline.contains("Brystsvømning")){
                 memberList.getBreastStrokers().add(c);
             }

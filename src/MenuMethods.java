@@ -3,11 +3,9 @@ import java.util.Collections;
 
 public class MenuMethods extends Member {
     private String teamOrNot;
-
     int counter = 0;
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
-    FileHandler fileHandler = new FileHandler();
     TrainerList trainerList = new TrainerList();
 
     // SORTERING
@@ -15,7 +13,6 @@ public class MenuMethods extends Member {
     CompetitionSorterBack sorterBack = new CompetitionSorterBack();
     CompetitionSorterCrawl sorterCrawl = new CompetitionSorterCrawl();
     CompetitionSorterButterfly sorterButterfly = new CompetitionSorterButterfly();
-
 
     // EJERSKAB FREYA, DITTE, MATHIAS
     public void addMember() {
@@ -28,6 +25,7 @@ public class MenuMethods extends Member {
 
     // EJERSKAB ALEXANDER & FREYA
     public void swimDiscipline() {
+
         boolean done = false;
 
         if (teamOrNot.equalsIgnoreCase("ja")) {
@@ -56,7 +54,6 @@ public class MenuMethods extends Member {
 
             CompetitionSwimmer c = new CompetitionSwimmer(getName(), getAge(), getPhoneNumber(), swimDiscipline);
             memberList.getCompetitionSwimmers().add(c);
-
 
             if (swimDiscipline.contains("Brystsvømning")) {
                 memberList.getBreastStrokers().add(c);
@@ -111,7 +108,6 @@ public class MenuMethods extends Member {
 
     // SORTERINGSMETODER // EJERSKAB DITTE & FREYA
 
-
     public void sortingBreast() {
         Collections.sort(memberList.getBreastStrokers(), sorterBreast);
         sortingTop5(memberList.getBreastStrokers(), "breast");
@@ -131,7 +127,6 @@ public class MenuMethods extends Member {
         Collections.sort(memberList.getButterFlyers(), sorterButterfly);
         sortingTop5(memberList.getButterFlyers(), "butterfly");
     }
-
 
     public void sortingTop5(ArrayList<CompetitionSwimmer> swimmerArrayList, String discipline) {
 
@@ -184,6 +179,7 @@ public class MenuMethods extends Member {
         }
     }
 
+    // EJERSKAB ALEXANDER & MATHIAS
     public void getInArrears() {
         ui.println("Medlemmer i restance: ");
         System.out.printf("%s%13s%n", "ID", "NAVN");
@@ -194,7 +190,6 @@ public class MenuMethods extends Member {
                 System.out.printf("%-30s%n", memberList.getCompetitionSwimmers().get(i).getName());
             }
         }
-
 
         for (int i = 0; i < memberList.getRecreationalSwimmers().size(); i++) {
             if (memberList.getRecreationalSwimmers().get(i).isInArrears()) {

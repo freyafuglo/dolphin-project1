@@ -1,7 +1,7 @@
-0001;Mathias;32;29382134;Crawl-Butterfly-;SENIOR;0.0;0.0;0.0;0.0;false;Lone Lioness
-0002;Mitzi;45;20765678;Rygsvømning-Crawl-;SENIOR;0.0;0.0;0.0;0.0;false;Kristina Krystalglad
+0001;Mathias;32;29382134;Crawl-Butterfly-;SENIOR;0.0;0.0;30.64;32.32;false;Lone Lioness
+0002;Mitzi;45;20765678;Rygsvømning-Crawl-;SENIOR;0.0;28.98;29.78;0.0;false;Kristina Krystalglad
 0003;Carlo;18;23452167;Brystsvømning-;SENIOR;0.0;0.0;0.0;0.0;false;John Jimmy Jørgensen
-0004;Frida Sophia;13;23765490;Brystsvømning-Rygsvømning-;JUNIOR;0.0;0.0;0.0;0.0;false;Inga
+0004;Frida Sophia;13;23765490;Brystsvømning-Rygsvømning-;JUNIOR;34.45;34.22;0.0;0.0;false;Inga
 0005;Storm;17;24137689;Brystsvømning-Crawl-;JUNIOR;0.0;0.0;0.0;0.0;false;Kristina Krystalglad
 0006;Majs;12;21098909;Butterfly-Rygsvømning-;JUNIOR;0.0;0.0;0.0;0.0;false;Lone Lioness
 0007;Henning;65;23452190;Brystsvømning-Butterfly-;PENSIONIST;0.0;0.0;0.0;0.0;false;Lone Lioness
@@ -10,4 +10,4 @@
 0010;Ole ;14;76098900;Brystsvømning-Butterfly-;JUNIOR;0.0;0.0;0.0;0.0;false;Kristina Krystalglad
 0011;Cornelius;12;8798099;Crawl-;JUNIOR;0.0;0.0;0.0;0.0;false;Kristina Krystalglad
 0012;Helle;45;65789988;Brystsvømning-Butterfly-;SENIOR;0.0;0.0;0.0;0.0;false;Lone Lioness
-0018;Jarl;15;63748576;Crawl-;JUNIOR;0.0;0.0;0.0;0.0;false;Kristina Krystalglad
+0013;Jarl;15;63748576;Crawl-;JUNIOR;0.0;0.0;0.0;0.0;false;Kristina Krystalglad

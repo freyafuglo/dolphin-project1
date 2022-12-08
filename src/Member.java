@@ -16,16 +16,14 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         this.inArrears = inArrears;
     }
 
-
-
     UserInterface ui = new UserInterface();
 
+    // KONSTRUKTØRER
     public Member(){
 
     }
 
-    public Member(String name, int age, String phoneNumber)
-    {
+    public Member(String name, int age, String phoneNumber) {
         setName(name);
         setAge(age);
         setPhoneNumber(phoneNumber);
@@ -34,10 +32,10 @@ public abstract class Member { // EJERSKAB: ALEXANDER & FREYA
         setSubscription();
 
     }
-
     public void isActive(boolean isActive) {
 
         this.isActive = isActive;
+
     }
 
     // SETTERE

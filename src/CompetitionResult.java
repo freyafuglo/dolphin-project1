@@ -1,18 +1,11 @@
-import java.util.ArrayList;
-
-public class CompetitionResult {
+public class CompetitionResult { // EJERSKAB ALEXANDER
     private String ID;
     private String name;
     private String competition;
     private String place;
     private double time;
 
-
-
-
-    CompetitionResult(){
-
-    }
+    // KONSTUKTØR
 
     CompetitionResult(String ID, String name, String competition, String place, double time){
         setName(name);
@@ -20,41 +13,44 @@ public class CompetitionResult {
         setCompetition(competition);
         setPlace(place);
         setTime(time);
-
     }
 
+    // SETTERE
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getName() {
-        return name;
-    }
     public void setID(String ID){
         this.ID = ID;
-    }
-    public String getID(){
-        return ID;
     }
 
     public void setCompetition(String competition) {
         this.competition = competition;
     }
 
-    public String getCompetition() {
-        return competition;
-    }
-
     public void setPlace(String place) {
         this.place = place;
     }
 
-    public String getPlace() {
-        return place;
-    }
-
     public void setTime(double time) {
         this.time = time;
+    }
+
+    // GETTERE
+
+    public String getName() {
+        return name;
+    }
+
+    public String getID(){
+        return ID;
+    }
+
+    public String getCompetition() {
+        return competition;
+    }
+
+    public String getPlace() {
+        return place;
     }
 
     public double getTime() {

@@ -1,4 +1,4 @@
-public class MemberListHandler {
+public class MemberListHandler { // EJERSKAB MATHIAS & ALEXANDER
 
     MemberList memberList = new MemberList();
     UserInterface ui = new UserInterface();
