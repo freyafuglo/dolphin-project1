@@ -3,11 +3,9 @@ import java.util.Collections;
 
 public class MenuMethods extends Member {
     private String teamOrNot;
-
     int counter = 0;
     UserInterface ui = new UserInterface();
     MemberList memberList = new MemberList();
-    FileHandler fileHandler = new FileHandler();
     TrainerList trainerList = new TrainerList();
 
     // SORTERING
